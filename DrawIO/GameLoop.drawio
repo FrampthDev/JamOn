@@ -1,0 +1,28 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.7 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.7">
+  <diagram name="Página-1" id="scl-AMSReBB9ibrTXMUK">
+    <mxGraphModel dx="1195" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NYVRdUltsphwWx7dDxb1-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NYVRdUltsphwWx7dDxb1-2" target="NYVRdUltsphwWx7dDxb1-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NYVRdUltsphwWx7dDxb1-2" value="Nueva&amp;nbsp;&lt;div&gt;generación&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="250" y="280" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NYVRdUltsphwWx7dDxb1-3" value="Emparejar" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="280" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NYVRdUltsphwWx7dDxb1-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NYVRdUltsphwWx7dDxb1-5" target="NYVRdUltsphwWx7dDxb1-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NYVRdUltsphwWx7dDxb1-5" value="Pase de generación" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="450" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NYVRdUltsphwWx7dDxb1-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NYVRdUltsphwWx7dDxb1-3" target="NYVRdUltsphwWx7dDxb1-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
