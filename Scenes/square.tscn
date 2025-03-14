@@ -7,6 +7,7 @@
 size = Vector2(128, 127)
 
 [node name="Square" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_mu0s7")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -18,3 +19,6 @@ shape = SubResource("RectangleShape2D_mu0s7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
 texture = ExtResource("2_64tuj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -7,3 +7,5 @@ script = ExtResource("1_bfmq8")
 
 [connection signal="PieceEnter" from="." to="." method="_on_piece_enter"]
 [connection signal="PieceExit" from="." to="." method="_on_piece_exit"]
+[connection signal="SquareEnter" from="." to="." method="_on_square_enter"]
+[connection signal="SquareExit" from="." to="." method="_on_square_exit"]
