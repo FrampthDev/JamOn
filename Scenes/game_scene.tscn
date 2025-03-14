@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://7earpq7viliu"]
+[gd_scene load_steps=2 format=3 uid="uid://7earpq7viliu"]
+
+[ext_resource type="PackedScene" uid="uid://hiwaiimychh8" path="res://Scenes/virtual_cursor.tscn" id="1_x87qo"]
 
 [node name="GameScene" type="Node2D"]
+
+[node name="VirtualCursor" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_x87qo")]
+camera = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(585, 301)
