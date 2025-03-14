@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csdq8y6uq1tcb"]
 
-[ext_resource type="Script" uid="uid://csu4e3m8h31of" path="res://tabletop.gd" id="1_2xkfj"]
+[ext_resource type="Script" uid="uid://csu4e3m8h31of" path="res://Sprites/tabletop.gd" id="1_2xkfj"]
 
 [node name="Tabletop" type="Node2D"]
 script = ExtResource("1_2xkfj")
