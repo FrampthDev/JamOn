@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gl7pcavf5owf"]
+
+[ext_resource type="Script" uid="uid://byfrdjvlpwsls" path="res://Scenes/GenTree/gen_tree.gd" id="1_itnn6"]
+
+[node name="GenTree" type="Node2D"]
+script = ExtResource("1_itnn6")
