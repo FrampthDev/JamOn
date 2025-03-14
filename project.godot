@@ -15,6 +15,10 @@ run/main_scene="uid://7earpq7viliu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+SignalManager="*res://Scenes/signal_manager.tscn"
+
 [dotnet]
 
 project/assembly_name="JamOn"
