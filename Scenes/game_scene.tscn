@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://7earpq7viliu"]
+[gd_scene load_steps=4 format=3 uid="uid://7earpq7viliu"]
 
 [ext_resource type="PackedScene" uid="uid://hiwaiimychh8" path="res://Scenes/virtual_cursor.tscn" id="1_x87qo"]
+[ext_resource type="PackedScene" uid="uid://csdq8y6uq1tcb" path="res://Scenes/tabletop.tscn" id="2_6h5vk"]
 [ext_resource type="PackedScene" uid="uid://r0qh1ukuc7kk" path="res://Scenes/piece.tscn" id="2_b6fju"]
 
 [node name="GameScene" type="Node2D"]
@@ -11,4 +12,8 @@ camera = NodePath("../Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(585, 301)
 
+[node name="Tabletop" parent="." instance=ExtResource("2_6h5vk")]
+position = Vector2(137.776, 159.582)
+
 [node name="Piece" parent="." instance=ExtResource("2_b6fju")]
+position = Vector2(269, 134)
