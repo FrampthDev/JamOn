@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://doqxsgwu02hbx"]
 
-[ext_resource type="Script" uid="uid://d0r6wdxk76rh8" path="res://Scenes/GenTree/gen_node.gd" id="1_7vfuo"]
+[ext_resource type="Script" uid="uid://d0r6wdxk76rh8" path="res://Scripts/gen_node.gd" id="1_7vfuo"]
 [ext_resource type="Texture2D" uid="uid://bdg44smqo5mdw" path="res://Sprites/icon.svg" id="2_mes72"]
 
 [node name="GenNode" type="Node2D"]
