@@ -21,12 +21,22 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
 		click = true
 		if !buffer[0].justStarted:
-			OccupySquare()
+			EmptySquare()
 		buffer[0].justStarted = false
 	else: if event.is_action_released("Click"):
-		if dragged && !buffer[0].squareBuffer[0].occupied:
+		var i: int = 0
+		var j: int = 0
+	
+		while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+			j = 0
+			while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+				j += 1
+			i += 1
+		
+		if dragged && squareArray[i - 1][j - 1].piece == null && squareArray[i - 1][j].piece == null:
 			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
 			OccupySquare()
+			
 		click = false
 		dragged = false
 	if dragged && event.is_action_pressed("SwapGens"):
@@ -77,15 +87,40 @@ func OccupySquare() -> void:
 	var i: int = 0
 	var j: int = 0
 	
-	while i < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+	while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+		j = 0
 		while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
 			j += 1
 		i += 1
 	
-	squareArray[i][j].occupied = !squareArray[i][j].occupied
-	squareArray[i][j + 1].occupied = !squareArray[i][j + 1].occupied
+	squareArray[i - 1][j - 1].piece = buffer[0]
+	squareArray[i - 1][j].piece = buffer[0]
 	
-	print("casilla ", i, " ", j, " ocupada: ", squareArray[i][j].occupied)
+	if squareArray[i - 1][j - 2].piece != null:
+		Match(squareArray[i - 1][j - 1].piece, squareArray[i - 1][j - 2].piece)
+	if squareArray[i - 1][j + 1]. piece != null:
+		Match(squareArray[i - 1][j - 1].piece, squareArray[i - 1][j + 1].piece)
+	
+	print("casilla ", i, " ", j, " ocupada: ", squareArray[i - 1][j - 1].piece != null)
+
+func EmptySquare() -> void:
+	print(buffer[0], " = ", buffer[0].squareBuffer[0].piece)
+	if buffer[0].squareBuffer[0].piece == buffer[0]:
+		var i: int = 0
+		var j: int = 0
+		
+		while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+			j = 0
+			while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+				j += 1
+			i += 1
+	
+		squareArray[i - 1][j - 1].piece = null
+		squareArray[i - 1][j].piece = null
+		print("No ocupada")
 
 func Start(array: Array) -> void:
 	squareArray = array
+
+func Match(movedPiece: Node2D, staticPiece: Node2D) -> void:
+	pass
