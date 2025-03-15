@@ -4,7 +4,7 @@ extends Node2D
 @export var nSquaresWidth: int = 32 # Tamaño casillas anchura
 
 var square = preload("res://Scenes/square.tscn")
-var squareSize = 64
+var squareSize = 32
 var squareArray: Array[Array]
 
 func _init() -> void:		

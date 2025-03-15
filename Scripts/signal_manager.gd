@@ -21,9 +21,15 @@ func _input(event: InputEvent) -> void:
 		click = true
 	else: if event.is_action_released("Click"):
 		if dragged:
-			buffer[0].position = squareBuffer[0].global_position
+			buffer[0].position = squareBuffer[0].global_position + Vector2(32, 16)
 		click = false
 		dragged = false
+
+func _init() -> void:
+	for i in 8:
+		buffer.append(null)
+		squareBuffer.append(null)
+		
 
 func _process(_delta: float) -> void:
 	if bufferIndex > 0 || dragged: 
@@ -35,7 +41,7 @@ func InitializeCursor(_cursor: Node2D) -> void:
 	cursor = _cursor
 
 func _on_piece_enter(piece: Node2D) -> void:
-	buffer.append(piece)
+	buffer[bufferIndex] = piece
 	bufferIndex += 1
 
 func _on_piece_exit(piece: Node2D) -> void:
@@ -51,7 +57,7 @@ func moveLeft(i: int) -> void:
 		buffer[i + j] = buffer[i + j + 1]
 
 func _on_square_enter(piece: Node2D) -> void:
-	squareBuffer.append(piece)
+	squareBuffer[squareBufferIndex] = piece
 	squareBufferIndex += 1
 	print(squareBufferIndex)
 

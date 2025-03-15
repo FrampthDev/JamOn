@@ -10,7 +10,7 @@ size = Vector2(63.5, 64)
 radius = 3.5
 
 [node name="Piece" type="Node2D"]
-scale = Vector2(2, 1)
+scale = Vector2(1, 0.5)
 script = ExtResource("1_y70yu")
 
 [node name="AreaPickUp" type="Area2D" parent="."]

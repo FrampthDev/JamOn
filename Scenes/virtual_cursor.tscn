@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bdg44smqo5mdw" path="res://Sprites/icon.svg" id="2_6kebs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myrik"]
+radius = 60.0
 
 [node name="VirtualCursor" type="Node2D"]
+scale = Vector2(0.05, 0.05)
 script = ExtResource("1_505s3")
 
 [node name="AreaMouse" type="Area2D" parent="."]
