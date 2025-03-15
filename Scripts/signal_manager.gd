@@ -18,7 +18,7 @@ var squareBufferIndex: int = 0
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
-		click = true	
+		click = true
 	else: if event.is_action_released("Click"):
 		if dragged:
 			buffer[0].position = squareBuffer[0].global_position
@@ -26,9 +26,10 @@ func _input(event: InputEvent) -> void:
 		dragged = false
 
 func _process(_delta: float) -> void:
-	if bufferIndex > 0 && click:
-		buffer[0].position = cursor.position
-		dragged = true
+	if bufferIndex > 0 || dragged: 
+		if click:
+			buffer[0].position = cursor.position
+			dragged = true
 
 func InitializeCursor(_cursor: Node2D) -> void:
 	cursor = _cursor
@@ -40,7 +41,7 @@ func _on_piece_enter(piece: Node2D) -> void:
 func _on_piece_exit(piece: Node2D) -> void:
 	var i: int = 0
 	while i < bufferIndex && piece != buffer[i]:
-		i += 1		
+		i += 1
 	if i < bufferIndex - 1: 
 		moveLeft(i)
 	bufferIndex -= 1
