@@ -9,6 +9,8 @@ var squareBufferIndex: int = 0
 
 var justStarted: bool = true
 
+var life: int = 5
+
 func SquareEnter(piece: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = piece
 	squareBufferIndex += 1
@@ -51,3 +53,13 @@ func switchGens() -> void:
 	$Icon.set_flip_h(flipX)
 	
 	print("piece flipped ", "flipX ", flipX)
+
+func on_generation_up() -> void:
+	life -= 1
+	#animation++
+	if life <= 0: kill_piece()
+
+func kill_piece() -> void:
+	#var pos = 
+	#SignalManager.squareArray[][] = null
+	queue_free()

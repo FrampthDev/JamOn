@@ -4,5 +4,5 @@ extends Node2D
 func _init() -> void:
 	SignalManager.InitializeCursor(self)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	position = camera.get_global_mouse_position()
