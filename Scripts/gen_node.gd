@@ -2,9 +2,10 @@ class_name	gen extends Node2D
 	
 var conexions : Array[gen]
 var id : String
-
-func Constructor(_id : String,_conexions: Array[gen]) -> void:
+var coordinates: Vector2i
+func Constructor(_id : String,_conexions: Array[gen],_coordinates:Vector2i) -> void:
 	id = _id
+	coordinates = _coordinates
 	#conexions.append(_conexions)
 	for g in _conexions:
 		# No se puede repetir conexiones
