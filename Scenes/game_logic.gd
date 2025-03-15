@@ -10,3 +10,8 @@ func _ready() -> void:
 		p = piece.instantiate()
 		p.position = i
 		add_child(p)
+		
+func NewPiece():
+	p = piece.instantiate()
+	#  Cambiar posici
+	pass
