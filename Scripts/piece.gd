@@ -11,6 +11,7 @@ var squareBufferIndex: int = 0
 var justStarted: bool = true
 
 var life: int = 5
+var piece_name: String
 
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
@@ -39,11 +40,13 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		SignalManager.PieceExit.emit(self)
 
 func _init() -> void:
+	
+	#name_assign()
+	
 	for i in 8:
 		squareBuffer.append(null)
 	#leftGen = (gen)
 	#rightGen = (gen)
-	pass
 
 func switchGens() -> void:
 	var temp = leftGen
@@ -64,3 +67,5 @@ func kill_piece() -> void:
 	#var pos = 
 	#SignalManager.squareArray[][] = null
 	queue_free()
+
+#func assign_piece_name() -> void: var piece_name = GameManager.get_child(0).get_piece_name()
