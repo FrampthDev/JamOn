@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://7earpq7viliu"]
+[gd_scene load_steps=5 format=3 uid="uid://7earpq7viliu"]
 
+[ext_resource type="PackedScene" uid="uid://dw6ghfvpdfvef" path="res://Scenes/GameManager.tscn" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://hiwaiimychh8" path="res://Scenes/virtual_cursor.tscn" id="1_x87qo"]
 [ext_resource type="PackedScene" uid="uid://csdq8y6uq1tcb" path="res://Scenes/tabletop.tscn" id="2_6h5vk"]
 [ext_resource type="PackedScene" uid="uid://r0qh1ukuc7kk" path="res://Scenes/piece.tscn" id="2_b6fju"]
 
 [node name="GameScene" type="Node2D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_fiftr")]
 
 [node name="VirtualCursor" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_x87qo")]
 camera = NodePath("../Camera2D")
