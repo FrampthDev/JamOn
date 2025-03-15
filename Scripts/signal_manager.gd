@@ -6,9 +6,13 @@ signal PieceExit
 signal SquareEnter
 signal SquareExit
 
+var squareArray
+
 var cursor
 var click: bool = false
 var dragged: bool = false
+var swap: bool = false
+var justStarted: bool = true
 
 var buffer: Array
 var bufferIndex: int = 0
@@ -19,23 +23,31 @@ var squareBufferIndex: int = 0
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
 		click = true
+		if !justStarted:
+			OccupySquare()
+		justStarted = false
 	else: if event.is_action_released("Click"):
-		if dragged:
+		if dragged && !squareBuffer[0].occupied:
 			buffer[0].position = squareBuffer[0].global_position + Vector2(32, 16)
+			OccupySquare()
 		click = false
 		dragged = false
+	if dragged && event.is_action_pressed("SwapGens"):
+		swap = true
 
 func _init() -> void:
 	for i in 8:
 		buffer.append(null)
 		squareBuffer.append(null)
-		
 
 func _process(_delta: float) -> void:
 	if bufferIndex > 0 || dragged: 
 		if click:
 			buffer[0].position = cursor.position
 			dragged = true
+			if swap:
+				buffer[0].switchGens()
+				swap = false
 
 func InitializeCursor(_cursor: Node2D) -> void:
 	cursor = _cursor
@@ -73,3 +85,18 @@ func _on_square_exit(piece: Node2D) -> void:
 func moveLeftBuffer(i: int) -> void:
 	for j in (squareBufferIndex - i - 1):
 		squareBuffer[i + j] = squareBuffer[i + j + 1]
+
+func OccupySquare() -> void:
+	var i: int = 0
+	var j: int = 0
+	
+	while i < 32 && squareBuffer[0] == squareArray[i][j]:
+		while j < 32 && squareBuffer[0] == squareArray[i][j]:
+			j += 1
+	i += 1
+	
+	squareArray[i][j].occupied = !squareArray[i][j].occupied
+	squareArray[i][j + 1].occupied = !squareArray[i][j + 1].occupied
+
+func Start(array: Array) -> void:
+	squareArray = array
