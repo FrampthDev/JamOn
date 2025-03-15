@@ -6,6 +6,8 @@ signal PieceExit
 signal SquareEnter
 signal SquareExit
 
+var gameScene: Node2D
+
 var squareArray
 
 var cursor
@@ -97,9 +99,9 @@ func OccupySquare() -> void:
 	squareArray[i - 1][j].piece = buffer[0]
 	
 	if squareArray[i - 1][j - 2].piece != null:
-		Match(squareArray[i - 1][j - 1].piece, squareArray[i - 1][j - 2].piece)
+		Match(i - 1, j - 1, i - 1, j - 2)
 	if squareArray[i - 1][j + 1]. piece != null:
-		Match(squareArray[i - 1][j - 1].piece, squareArray[i - 1][j + 1].piece)
+		Match(i - 1, j - 1, i - 1, j + 1)
 	
 	print("casilla ", i, " ", j, " ocupada: ", squareArray[i - 1][j - 1].piece != null)
 
@@ -121,6 +123,10 @@ func EmptySquare() -> void:
 
 func Start(array: Array) -> void:
 	squareArray = array
+	
+func StartScene(_gameScene: Node2D) -> void:
+	gameScene = _gameScene
 
-func Match(movedPiece: Node2D, staticPiece: Node2D) -> void:
-	pass
+func Match(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: int) -> void:
+	print("match")
+	gameScene.InstantiateChild(iMovedPiece, jMovedPiece, iStaticPiece, jStaticPiece, squareArray)
