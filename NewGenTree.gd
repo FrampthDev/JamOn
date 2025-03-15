@@ -74,7 +74,7 @@ func DrawMatrix():
 		for j in genMatrix.size():
 			print(genMatrix[i][j])
 func isInMatrix(g : gen):
-	var isIn := false
+	var isIn := false 
 	var i := 0
 	var j := 0
 	while i < MatrixSize and !isIn:

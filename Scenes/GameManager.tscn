@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw6ghfvpdfvef"]
+[gd_scene load_steps=5 format=3 uid="uid://d2ufn8gahwvui"]
 
 [ext_resource type="Script" uid="uid://clm707abuqd68" path="res://Scripts/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://cyjrw3m64thn2" path="res://Scripts/name_generator.gd" id="2_bwyv8"]
+[ext_resource type="Script" uid="uid://flu81hp8iw6w" path="res://Scenes/game_logic.gd" id="3_7cxpe"]
+[ext_resource type="Script" uid="uid://koqu7hb86sy2" path="res://Scenes/array_positions.gd" id="4_b7dir"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_m2tc1")
+
+[node name="ArrayPositions" type="Node2D" parent="."]
+position = Vector2(1515, 349)
+script = ExtResource("4_b7dir")
+
+[node name="GameLogic" type="Node2D" parent="."]
+script = ExtResource("3_7cxpe")
 
 [node name="NamesGenerator" type="Node" parent="."]
 script = ExtResource("2_bwyv8")
