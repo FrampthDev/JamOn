@@ -7,6 +7,8 @@ var flipX: bool
 var squareBuffer: Array
 var squareBufferIndex: int = 0
 
+var justStarted: bool = true
+
 func SquareEnter(piece: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = piece
 	squareBufferIndex += 1
