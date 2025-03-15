@@ -3,7 +3,7 @@ extends Node2D
 var piecePrefab = preload("res://Scenes/piece.tscn")
 var instantiatedPiece
 
-func _init() -> void:
+func _ready() -> void:
 	SignalManager.StartScene(self)
 
 func InstantiateChild(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: int, squareArray: Array) -> void:	
