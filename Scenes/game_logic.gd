@@ -3,7 +3,7 @@ extends Node2D
 var piece := preload("res://Scenes/piece.tscn")
 var initialPositions 
 
-func _init() -> void:
+func _ready() -> void:
 	var a : Node2D = piece.instantiate()
 	
 	initialPositions = $"../ArrayPositions"
