@@ -8,8 +8,9 @@ func _init() -> void:
 
 func InstantiateChild(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: int, squareArray: Array) -> void:	
 	instantiatedPiece = piecePrefab.instantiate()
-	if (jStaticPiece < jMovedPiece):
+	if (jStaticPiece < jMovedPiece && squareArray[iMovedPiece + 2][jMovedPiece].piece == null && squareArray[iMovedPiece + 2][jMovedPiece + 1].piece == null):
 		instantiatedPiece.position = squareArray[iMovedPiece + 2][jMovedPiece].global_position + Vector2(32, 16)
-	else:
+	else: if jStaticPiece > jMovedPiece && [iMovedPiece + 2][jMovedPiece + 2].piece == null && squareArray[iMovedPiece + 2][jMovedPiece + 3].piece == null:
 		instantiatedPiece.position = squareArray[iMovedPiece + 2][jMovedPiece + 2].global_position + Vector2(32, 16)
 	add_child(instantiatedPiece)
+	SignalManager.buffer[0] = instantiatedPiece

@@ -11,14 +11,14 @@ var justStarted: bool = true
 
 var life: int = 5
 
-func SquareEnter(piece: Node2D) -> void:
-	squareBuffer[squareBufferIndex] = piece
+func SquareEnter(square: Node2D) -> void:
+	squareBuffer[squareBufferIndex] = square
 	squareBufferIndex += 1
 	print(squareBufferIndex)
 
-func SquareExit(piece: Node2D) -> void:
+func SquareExit(square: Node2D) -> void:
 	var i: int = 0
-	while i < squareBufferIndex && piece != squareBuffer[i]:
+	while i < squareBufferIndex && square != squareBuffer[i]:
 		i += 1
 	if i < squareBufferIndex - 1: 
 		MoveLeftBuffer(i)

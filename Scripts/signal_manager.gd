@@ -20,12 +20,12 @@ var buffer: Array
 var bufferIndex: int = 0
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Click"):
+	if event.is_action_pressed("Click") && buffer[0] != null:
 		click = true
 		if !buffer[0].justStarted:
 			EmptySquare()
 		buffer[0].justStarted = false
-	else: if event.is_action_released("Click"):
+	else: if event.is_action_released("Click") && buffer[0] != null:
 		var i: int = 0
 		var j: int = 0
 	
@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 				j += 1
 			i += 1
 		
-		if dragged && squareArray[i - 1][j - 1].piece == null && squareArray[i - 1][j].piece == null:
+		if dragged && buffer[0].squareBufferIndex > 0 && squareArray[i - 1][j - 1].piece == null && squareArray[i - 1][j].piece == null:
 			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
 			OccupySquare()
 			
@@ -76,11 +76,12 @@ func moveLeft(i: int) -> void:
 	for j in (bufferIndex - i - 1):
 		buffer[i + j] = buffer[i + j + 1]
 
-func _on_square_enter(piece: Node2D) -> void:
-	buffer[0].SquareEnter(piece)
+func _on_square_enter(square: Node2D) -> void:
+	buffer[0].SquareEnter(square)
+	print(square)
 
-func _on_square_exit(piece: Node2D) -> void:
-	buffer[0].SquareExit(piece)
+func _on_square_exit(square: Node2D) -> void:
+	buffer[0].SquareExit(square)
 
 func moveLeftBuffer(i: int) -> void:
 	buffer[0].MoveLeftBuffer(i)
@@ -106,8 +107,7 @@ func OccupySquare() -> void:
 	print("casilla ", i, " ", j, " ocupada: ", squareArray[i - 1][j - 1].piece != null)
 
 func EmptySquare() -> void:
-	print(buffer[0], " = ", buffer[0].squareBuffer[0].piece)
-	if buffer[0].squareBuffer[0].piece == buffer[0]:
+	if buffer[0].squareBuffer[0] != null && buffer[0].squareBuffer[0].piece == buffer[0]:
 		var i: int = 0
 		var j: int = 0
 		
