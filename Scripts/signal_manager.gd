@@ -27,8 +27,8 @@ func _input(event: InputEvent) -> void:
 			OccupySquare()
 		justStarted = false
 	else: if event.is_action_released("Click"):
-		if dragged && !squareBuffer[0].occupied:
-			buffer[0].position = squareBuffer[0].global_position + Vector2(32, 16)
+		if dragged && !buffer[0].squareBuffer[0].occupied:
+			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
 			OccupySquare()
 		click = false
 		dragged = false
@@ -38,7 +38,6 @@ func _input(event: InputEvent) -> void:
 func _init() -> void:
 	for i in 8:
 		buffer.append(null)
-		squareBuffer.append(null)
 
 func _process(_delta: float) -> void:
 	if bufferIndex > 0 || dragged: 
@@ -69,29 +68,20 @@ func moveLeft(i: int) -> void:
 		buffer[i + j] = buffer[i + j + 1]
 
 func _on_square_enter(piece: Node2D) -> void:
-	squareBuffer[squareBufferIndex] = piece
-	squareBufferIndex += 1
-	print(squareBufferIndex)
+	buffer[0].SquareEnter(piece)
 
 func _on_square_exit(piece: Node2D) -> void:
-	var i: int = 0
-	while i < squareBufferIndex && piece != squareBuffer[i]:
-		i += 1
-	if i < squareBufferIndex - 1: 
-		moveLeftBuffer(i)
-	squareBufferIndex -= 1
-	print(squareBufferIndex)
+	buffer[0].SquareExit(piece)
 
 func moveLeftBuffer(i: int) -> void:
-	for j in (squareBufferIndex - i - 1):
-		squareBuffer[i + j] = squareBuffer[i + j + 1]
+	buffer[0].MoveLeftBuffer(i)
 
 func OccupySquare() -> void:
 	var i: int = 0
 	var j: int = 0
 	
-	while i < 32 && squareBuffer[0] == squareArray[i][j]:
-		while j < 32 && squareBuffer[0] == squareArray[i][j]:
+	while i < 32 && buffer[0].squareBuffer[0] == squareArray[i][j]:
+		while j < 32 && buffer[0].squareBuffer[0] == squareArray[i][j]:
 			j += 1
 	i += 1
 	
