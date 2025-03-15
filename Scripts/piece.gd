@@ -1,7 +1,8 @@
 extends Node2D
 
-var leftGen: Node2D
-var rightGen: Node2D
+var leftGen: gen
+var rightGen: gen
+
 var flipX: bool
 
 var squareBuffer: Array
