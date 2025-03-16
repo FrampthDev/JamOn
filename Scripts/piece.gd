@@ -10,7 +10,11 @@ var squareBufferIndex: int = 0
 
 var justStarted: bool = true
 
-var life: int = 5
+var crown_sprite = preload("res://Scenes/crown.tscn")
+
+@export var life: int = 5
+@export var crowns: int
+
 var piece_name: String
 
 var agePiece := 0
@@ -54,12 +58,14 @@ func _ready() -> void:
 	assign_name_and_img()
 	
 	$AreaPickUp/Label.visible = false
-	
 	for i in 8:
 		squareBuffer.append(null)
-	#leftGen = (gen)
-	#rightGen = (gen)
-
+			
+	for i in crowns:
+		var crown = crown_sprite.instantiate()  # Instanciar la corona
+		crown.position = Vector2(i * 7, 0)  # Ajusta la posición (ejemplo: separadas 50px)
+		$Crowns.add_child(crown)  # Agregar como hijo del nodo Crowns
+		
 func switchGens() -> void:
 	var temp = leftGen
 	leftGen = rightGen
@@ -77,7 +83,6 @@ func on_generation_up() -> void:
 	if life <= 0: kill_piece()
 
 func kill_piece() -> void:
-	#var pos = 
 	#SignalManager.squareArray[][] = null
 	queue_free()
 

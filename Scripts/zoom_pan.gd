@@ -1,18 +1,17 @@
 extends Camera2D
 
-@export var min_zoom: float = 1.0
-@export var max_zoom: float = 4.0
+@export var min_zoom: float = 1.5
+@export var max_zoom: float = 5.0
 
 @export var move_speed: float = 280.0
 
-@export var top_limit: float = -200
-@export var bottom_limit: float = 200
-@export var left_limit: float = -200
-@export var right_limit: float = 200
+@export var top_limit: float = -40
+@export var bottom_limit: float = 60
+@export var left_limit: float = -40
+@export var right_limit: float = 40
 
 func _ready() -> void:
 	zoom *= min_zoom
-	
 
 func _input(event):
 	# Zoom con la rueda del ratón
@@ -26,12 +25,13 @@ func _input(event):
 		zoom.y = clamp(zoom.y, min_zoom, max_zoom)
 
 func _process(delta):
+	var jesus = zoom.x * 2.2
 	# Movimiento con WASD o flechas
-	if Input.is_action_pressed('Right') and position.x < right_limit:
+	if Input.is_action_pressed('Right') and position.x < right_limit * jesus:
 		position.x += move_speed * delta
-	if Input.is_action_pressed('Left') and position.x > left_limit:
+	if Input.is_action_pressed('Left') and position.x > left_limit * jesus:
 		position.x -= move_speed * delta
-	if Input.is_action_pressed('Down') and position.y < bottom_limit:
+	if Input.is_action_pressed('Down') and position.y < bottom_limit * jesus:
 		position.y += move_speed * delta
-	if Input.is_action_pressed('Up') and position.y > top_limit:
+	if Input.is_action_pressed('Up') and position.y > top_limit * jesus:
 		position.y -= move_speed * delta
