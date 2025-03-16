@@ -29,9 +29,9 @@ func _input(event: InputEvent) -> void:
 		var i: int = 0
 		var j: int = 0
 	
-		while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+		while i < 7 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
 			j = 0
-			while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+			while j < 27 && buffer[0].squareBuffer[0] != squareArray[i][j]:
 				j += 1
 			i += 1
 		
@@ -90,9 +90,9 @@ func OccupySquare() -> void:
 	var i: int = 0
 	var j: int = 0
 	
-	while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+	while i < 7 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
 		j = 0
-		while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+		while j < 27 && buffer[0].squareBuffer[0] != squareArray[i][j]:
 			j += 1
 		i += 1
 	
@@ -101,7 +101,7 @@ func OccupySquare() -> void:
 	
 	if squareArray[i - 1][j - 2].piece != null:
 		Match(i - 1, j - 1, i - 1, j - 2)
-	if squareArray[i - 1][j + 1]. piece != null:
+	if squareArray[i - 1][j + 1].piece != null:
 		Match(i - 1, j - 1, i - 1, j + 1)
 	
 	print("casilla ", i, " ", j, " ocupada: ", squareArray[i - 1][j - 1].piece != null)
@@ -111,9 +111,9 @@ func EmptySquare() -> void:
 		var i: int = 0
 		var j: int = 0
 		
-		while i < 31 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
+		while i < 7 && buffer[0].squareBuffer[0] != squareArray[i - 1][j]:
 			j = 0
-			while j < 31 && buffer[0].squareBuffer[0] != squareArray[i][j]:
+			while j < 27 && buffer[0].squareBuffer[0] != squareArray[i][j]:
 				j += 1
 			i += 1
 	
