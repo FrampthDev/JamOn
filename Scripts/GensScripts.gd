@@ -17,7 +17,7 @@ var leftGenSprite :Sprite2D
 func _ready() -> void:
 	rightGenSprite = $LeftGen/LeftSprite2D
 	leftGenSprite = $RightGen/RightSprite2D
-	OriginalPiece = $".."
+	OriginalPiece = $"../.."
 	
 	print(OriginalPiece.leftGen.id)
 	print(OriginalPiece.rightGen.id)

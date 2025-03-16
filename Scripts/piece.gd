@@ -48,7 +48,6 @@ func _init() -> void:
 
 func _ready() -> void:
 
-		
 	assign_name_and_img()
 	
 	$AreaPickUp/Label.visible = false

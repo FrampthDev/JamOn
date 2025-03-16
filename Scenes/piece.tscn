@@ -50,7 +50,7 @@ shape = SubResource("CircleShape2D_y70yu")
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_y70yu")
 
-[node name="Gens" type="Node2D" parent="."]
+[node name="Gens" type="Node2D" parent="Icon"]
 position = Vector2(-27, -14)
 script = ExtResource("4_xe4ox")
 genA = ExtResource("4_66160")
@@ -62,26 +62,26 @@ genF = ExtResource("4_66160")
 genG = ExtResource("4_66160")
 genH = ExtResource("4_66160")
 
-[node name="LeftGen" type="Node2D" parent="Gens"]
+[node name="LeftGen" type="Node2D" parent="Icon/Gens"]
 position = Vector2(49, 12)
 
-[node name="LeftSprite2D" type="Sprite2D" parent="Gens/LeftGen"]
+[node name="LeftSprite2D" type="Sprite2D" parent="Icon/Gens/LeftGen"]
 scale = Vector2(0.0976563, 0.0976563)
 
-[node name="leftLabel" type="Label" parent="Gens/LeftGen"]
+[node name="leftLabel" type="Label" parent="Icon/Gens/LeftGen"]
 offset_left = -5.0
 offset_top = -12.0
 offset_right = 35.0
 offset_bottom = 11.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="RightGen" type="Node2D" parent="Gens"]
+[node name="RightGen" type="Node2D" parent="Icon/Gens"]
 position = Vector2(5, 12)
 
-[node name="RightSprite2D" type="Sprite2D" parent="Gens/RightGen"]
+[node name="RightSprite2D" type="Sprite2D" parent="Icon/Gens/RightGen"]
 scale = Vector2(0.0976563, 0.0976563)
 
-[node name="rightLabel" type="Label" parent="Gens/RightGen"]
+[node name="rightLabel" type="Label" parent="Icon/Gens/RightGen"]
 offset_left = -5.0
 offset_top = -12.0
 offset_right = 35.0
