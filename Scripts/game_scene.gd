@@ -10,7 +10,7 @@ var tabletop : Node2D
 func _ready() -> void:
 	tabletop = $Tabletop
 	SignalManager.StartScene(self)
-	PositionCont = GameManager.get_node("PositionArray").cont	
+	PositionCont = GameManager.get_node("PositionArray").cont
 	PositionArray = GameManager.get_node("PositionArray").Positions
 	NewPiece(gen.new(),gen.new())
 
@@ -18,10 +18,8 @@ func _process(delta: float) -> void:
 	if SignalManager._on_add_age() != null:
 		var delgen := SignalManager._on_add_age()
 
-
 func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
 		NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
-
 
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1
@@ -56,5 +54,4 @@ func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	p.leftGen = a
 	p.rightGen = b
 	add_child(p)
-	SignalManager.buffer[0] = instantiatedPiece
-	
+	SignalManager.buffer[0] = p
