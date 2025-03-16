@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 	if dragged && event.is_action_pressed("SwapGens"):
 		swap = true
 
-func _init() -> void:
+func _ready() -> void:
 	for i in 8:
 		buffer.append(null)
 
