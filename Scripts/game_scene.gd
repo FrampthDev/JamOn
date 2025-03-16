@@ -29,8 +29,6 @@ func NewPiece(a:gen,b:gen):
 	p.rightGen = b
 	add_child(p)
 
-	
-	
 	# Si la funcion isleft o right devuelven algo, comprobar si los genes son los buenos e instanciar una ficha nueva con los genes compatibles
 	
 func addAge():
