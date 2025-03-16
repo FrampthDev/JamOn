@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://r0qh1ukuc7kk"]
+[gd_scene load_steps=7 format=3 uid="uid://r0qh1ukuc7kk"]
 
 [ext_resource type="Script" uid="uid://dgas46lyqf363" path="res://Scripts/piece.gd" id="1_y70yu"]
+[ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="2_l2hco"]
 [ext_resource type="Texture2D" uid="uid://cpl8ovjawqc4f" path="res://Sprites/WhatsApp Image 2025-03-15 at 12.55.26.jpeg" id="2_y70yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y70yu"]
 size = Vector2(63.5, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66160"]
+font = ExtResource("2_l2hco")
+font_size = 10
+font_color = Color(1, 0.893982, 0.699143, 1)
+outline_size = 4
+outline_color = Color(0.282353, 0.109804, 0, 0.411765)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y70yu"]
 radius = 3.5
@@ -17,6 +25,19 @@ script = ExtResource("1_y70yu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPickUp"]
 position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_y70yu")
+
+[node name="Label" type="Label" parent="AreaPickUp"]
+z_index = 15
+texture_filter = 1
+offset_left = -41.0
+offset_top = 17.0
+offset_right = 43.0
+offset_bottom = 27.0
+mouse_filter = 0
+text = "Alfredo VIII el Gnomo"
+label_settings = SubResource("LabelSettings_66160")
+horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="AreaPlacement" type="Area2D" parent="."]
 

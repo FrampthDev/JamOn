@@ -3,7 +3,7 @@ extends Node
 var royal_names: Array = []
 var animals: Dictionary = {} # animal_name + img_path
 
-func _ready() -> void:
+func _init() -> void: #Aquí si hay que dejar el _init
 	
 	generate_royal_names()
 		

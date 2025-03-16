@@ -33,11 +33,14 @@ func MoveLeftBuffer(i: int) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "AreaMouse":
+		$AreaPickUp/Label.visible = true
 		SignalManager.PieceEnter.emit(self)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "AreaMouse":
+		$AreaPickUp/Label.visible = false
 		SignalManager.PieceExit.emit(self)
+		
 
 func _ready() -> void:
 	
@@ -75,4 +78,6 @@ func assign_name_and_img() -> void:
 	
 	piece_name = royal_animal.keys()[0]
 	
-	$Icon.texture = load(royal_animal[piece_name])	
+	$AreaPickUp/Label.text = piece_name
+	
+	$Icon.texture = load(royal_animal[piece_name])

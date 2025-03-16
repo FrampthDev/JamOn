@@ -63,6 +63,7 @@ func InitializeCursor(_cursor: Node2D) -> void:
 func _on_piece_enter(piece: Node2D) -> void:
 	buffer[bufferIndex] = piece
 	bufferIndex += 1
+	
 
 func _on_piece_exit(piece: Node2D) -> void:
 	var i: int = 0

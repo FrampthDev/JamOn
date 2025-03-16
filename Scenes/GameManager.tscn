@@ -12,8 +12,8 @@ script = ExtResource("1_m2tc1")
 position = Vector2(1632, 291)
 script = ExtResource("2_b7dir")
 
-[node name="NamesGenerator" type="Node" parent="."]
-script = ExtResource("2_bwyv8")
-
 [node name="GameLogic" type="Node2D" parent="."]
 script = ExtResource("4_mmuqr")
+
+[node name="NamesGenerator" type="Node" parent="."]
+script = ExtResource("2_bwyv8")
