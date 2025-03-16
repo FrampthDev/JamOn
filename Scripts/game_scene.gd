@@ -10,9 +10,12 @@ func _ready() -> void:
 	SignalManager.StartScene(self)
 	PositionCont = GameManager.get_node("PositionArray").cont	
 	PositionArray = GameManager.get_node("PositionArray").Positions
+	NewPiece(gen.new(),gen.new())
+
 
 func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
 		NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
+
 
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1
@@ -21,6 +24,20 @@ func NewPiece(a:gen,b:gen):
 	p.leftGen = a
 	p.rightGen = b
 	add_child(p)
+
+	
+	
+	# Si la funcion isleft o right devuelven algo, comprobar si los genes son los buenos e instanciar una ficha nueva con los genes compatibles
+	
+func addAge():
+	SignalManager.AddAge.emit()
+func destroyPiece():
+	pass
+func resetConexion(_gen : gen,_genToDelete:gen):
+	# borra la conexion g y genera un nuevo nodo 
+	_gen.DelConexion(_genToDelete)
+	pass
+
 
 func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	print("nuevo hijo")

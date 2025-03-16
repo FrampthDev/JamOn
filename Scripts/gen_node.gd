@@ -3,7 +3,12 @@ class_name	gen extends Node2D
 var conexions : Array[gen]
 var id : String
 var coordinates: Vector2i
-var cont : int = 0  
+var cont : int = 0
+var age:= 0 
+@export var MaxGenAge := 0
+
+@export var spriteConexion : Texture2D
+
 func Constructor(_id : String,_conexions: Array[gen],_coordinates:Vector2i) -> void:
 	id = _id
 	coordinates = _coordinates
@@ -22,3 +27,7 @@ func AddConexion(_gen : gen) ->void:
 
 func DelConexion(deleteGen : gen) -> void:
 	conexions.erase(deleteGen)
+	
+func _process(delta: float) -> void:
+	if SignalManager.AddAge:
+		age += 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7earpq7viliu"]
+[gd_scene load_steps=7 format=3 uid="uid://7earpq7viliu"]
 
 [ext_resource type="Script" uid="uid://cjn6p1bcs8s1g" path="res://Scripts/game_scene.gd" id="1_1ixah"]
 [ext_resource type="PackedScene" uid="uid://hiwaiimychh8" path="res://Scenes/virtual_cursor.tscn" id="1_x87qo"]
 [ext_resource type="Script" uid="uid://dl0tlkammgteb" path="res://Scripts/zoom_pan.gd" id="2_1ixah"]
 [ext_resource type="PackedScene" uid="uid://csdq8y6uq1tcb" path="res://Scenes/tabletop.tscn" id="2_6h5vk"]
 [ext_resource type="PackedScene" uid="uid://r0qh1ukuc7kk" path="res://Scenes/piece.tscn" id="2_b6fju"]
+[ext_resource type="PackedScene" uid="uid://gl7pcavf5owf" path="res://Scenes/GenTree/gen_tree.tscn" id="6_rgj8m"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_1ixah")
@@ -25,3 +26,6 @@ position = Vector2(117, 343)
 
 [node name="Piece2" parent="." instance=ExtResource("2_b6fju")]
 position = Vector2(-41, 349)
+
+[node name="GenTree" parent="." instance=ExtResource("6_rgj8m")]
+position = Vector2(-171, -107)

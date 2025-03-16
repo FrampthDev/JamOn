@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dgas46lyqf363" path="res://Scripts/piece.gd" id="1_y70yu"]
 [ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="2_l2hco"]
-[ext_resource type="Texture2D" uid="uid://cpl8ovjawqc4f" path="res://Sprites/WhatsApp Image 2025-03-15 at 12.55.26.jpeg" id="2_y70yu"]
 [ext_resource type="Script" uid="uid://dl0m5ncckxw5l" path="res://Scripts/GensScripts.gd" id="4_xe4ox"]
 [ext_resource type="Texture2D" uid="uid://bn2aqkom1elib" path="res://Sprites/Gens/CIRCULO_.png" id="5_618xn"]
 [ext_resource type="Texture2D" uid="uid://ywqj4xat34gh" path="res://Sprites/Gens/CUADRADO.png" id="6_y4w7p"]
@@ -25,6 +24,9 @@ outline_color = Color(0.282353, 0.109804, 0, 0.411765)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y70yu"]
 radius = 3.5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umus7"]
+load_path = "res://.godot/imported/WhatsApp Image 2025-03-15 at 12.55.26.jpeg-f186862afd1e655ead0d78b6b7e5aa96.ctex"
 
 [node name="Piece" type="Node2D"]
 script = ExtResource("1_y70yu")
@@ -55,7 +57,7 @@ position = Vector2(-15.5, 0)
 shape = SubResource("CircleShape2D_y70yu")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_y70yu")
+texture = SubResource("CompressedTexture2D_umus7")
 
 [node name="Gens" type="Node2D" parent="Icon"]
 position = Vector2(-27, -14)
@@ -73,7 +75,6 @@ genH = ExtResource("12_ytyah")
 position = Vector2(49, 12)
 
 [node name="LeftSprite2D" type="Sprite2D" parent="Icon/Gens/LeftGen"]
-scale = Vector2(0.0976563, 0.0976563)
 
 [node name="leftLabel" type="Label" parent="Icon/Gens/LeftGen"]
 offset_left = -5.0
@@ -86,7 +87,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 position = Vector2(5, 12)
 
 [node name="RightSprite2D" type="Sprite2D" parent="Icon/Gens/RightGen"]
-scale = Vector2(0.0976563, 0.0976563)
 
 [node name="rightLabel" type="Label" parent="Icon/Gens/RightGen"]
 offset_left = -5.0
