@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btx4calfu1sxl"
+path="res://.godot/imported/dejar ficha.mp3-5ab153e4750d0c73a23388a2d60f0a45.mp3str"
+
+[deps]
+
+source_file="res://Audio/dejar ficha.mp3"
+dest_files=["res://.godot/imported/dejar ficha.mp3-5ab153e4750d0c73a23388a2d60f0a45.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

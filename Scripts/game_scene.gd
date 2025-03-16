@@ -7,7 +7,9 @@ var instantiatedPiece
 var PositionCont
 var PositionArray
 var p :Node2D
-var tabletop : Node2D 
+var tabletop : Node2D
+
+@onready var sfx_player = GameManager.get_node("SFXPlayer")
 
 
 func _ready() -> void:
@@ -25,7 +27,9 @@ func _process(delta: float) -> void:
 		SignalManager.destroyPiece.queue_free()
 
 func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
-		NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
+	sfx_player.stream = preload("res://Audio/creacion.mp3")
+	sfx_player.play()
+	NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
 
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1

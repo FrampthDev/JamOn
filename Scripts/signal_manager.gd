@@ -10,7 +10,7 @@ signal AddAge
 signal MaxGenAge
 signal MaxPieceAge
 
-var sfx_player = GameManager.get_node("SFXPlayer")
+@onready var sfx_player = GameManager.get_node("SFXPlayer")
 
 var gameScene: Node2D
 
@@ -29,6 +29,10 @@ var turn: int = 0
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Click"):
+		sfx_player.stream = preload("res://Audio/click.mp3")
+		sfx_player.play()
+		
 	if event.is_action_pressed("Click") && buffer[0] != null:
 		click = true
 		if !buffer[0].justStarted && buffer[0].squareBuffer[0] != null && buffer[0].squareBuffer[0].piece == buffer[0]:
@@ -44,7 +48,7 @@ func _input(event: InputEvent) -> void:
 			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
 			OccupySquare(i, j, buffer[0])
 	
-			sfx_player.stream = preload("res://Audio/piece_placed.wav")
+			sfx_player.stream = preload("res://Audio/dejar ficha.mp3")
 			sfx_player.play()
 
 			
