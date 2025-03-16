@@ -77,10 +77,10 @@ func OccupySquare(i: int, j: int, square: Node2D) -> void:
 	squareArray[i][j + 1].piece = square
 	
 	if IsLeft(i, j):
-		Match(i + 2, j - 1, squareArray[i][j].piece.leftGen, squareArray[i][j - 1].piece.rightGen)
+		Match(i + 2, j - 1, squareArray[i][j].piece.leftGen, squareArray[i][j - 1].piece.rightGen,squareArray[i][j].piece.crowns+squareArray[i][j - 1].piece.crowns)
 		print("está a la izquierda")
 	if IsRight(i, j):
-		Match(i + 2, j + 1, squareArray[i][j].piece.rightGen, squareArray[i][j + 2].piece.leftGen)
+		Match(i + 2, j + 1, squareArray[i][j].piece.rightGen, squareArray[i][j + 2].piece.leftGen,squareArray[i][j].piece.crowns+squareArray[i][j + 2].piece.crowns)
 		print("está a la derecha")
 
 func EmptySquare(i, j) -> void:
@@ -134,10 +134,10 @@ func Start(array: Array) -> void:
 func StartScene(_gameScene: Node2D) -> void:
 	gameScene = _gameScene
 
-func Match(i: int, j: int, genA: gen, genB: gen) -> void:
+func Match(i: int, j: int, genA: gen, genB: gen,crown: int) -> void:
 	#if gameScene.IsCompatible(genA, genB): # FALTA QUE EXISTA EL MÉTODO ISCOMPATIBLE()
 		if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
-			gameScene.InstantiateChild(i, j, squareArray)
+			gameScene.InstantiateChild(i, j, squareArray,genA,genB,crown)
 
 
 #__________________________________________________________________________________________________
