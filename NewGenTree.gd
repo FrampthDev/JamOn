@@ -34,15 +34,25 @@ func initGenMatrix():
 	var A: gen = addGen("A",[],Vector2i(10,10))
 	var B: gen = addGen("B",[],Vector2i(11,10))
 	var C: gen = addGen("C",[],Vector2i(11,11))
-	var D: gen = addGen("D",[],Vector2i(10,11))
+	var D: gen = addGen("D",[],Vector2i(12,11))
+	var E: gen = addGen("E",[],Vector2i(12,12))
+	var F: gen = addGen("F",[],Vector2i(11,12))
+	var G: gen = addGen("G",[],Vector2i(10,12))
+	var H: gen = addGen("H",[],Vector2i(10,11))
 	A.AddConexion(B)
-	A.AddConexion(D)
+	A.AddConexion(H)
 	B.AddConexion(A)
 	B.AddConexion(C)
 	C.AddConexion(B)
 	C.AddConexion(D)
 	D.AddConexion(C)
-	D.AddConexion(A)
+	D.AddConexion(E)
+	E.AddConexion(D)
+	E.AddConexion(F)
+	F.AddConexion(E)
+	F.AddConexion(G)
+	G.AddConexion(H)
+	G.AddConexion(F)
 	
 	
 	
@@ -59,6 +69,7 @@ func _process(delta: float) -> void:
 				var newGen: gen = genMatrix[i][j]
 				add_child(newGen)
 				newGen.position = Vector2(i*nodePadding,j*nodePadding)
+		
 				
 				
 func _draw() -> void:

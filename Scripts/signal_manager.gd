@@ -7,6 +7,7 @@ signal SquareEnter
 signal SquareExit
 
 signal AddAge
+signal MaxGenAge
 
 var gameScene: Node2D
 
@@ -235,3 +236,7 @@ func Match(i: int, j: int) -> void:
 
 func _on_add_age() -> bool:
 	return true
+
+
+func _on_max_gen_age(g:gen) -> gen:
+	return g

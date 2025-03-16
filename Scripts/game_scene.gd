@@ -5,12 +5,18 @@ var instantiatedPiece
 var PositionCont
 var PositionArray
 var p :Node2D
+var tabletop : Node2D 
 
 func _ready() -> void:
+	tabletop = $Tabletop
 	SignalManager.StartScene(self)
 	PositionCont = GameManager.get_node("PositionArray").cont	
 	PositionArray = GameManager.get_node("PositionArray").Positions
 	NewPiece(gen.new(),gen.new())
+
+func _process(delta: float) -> void:
+	if SignalManager._on_add_age() != null:
+		var delgen := SignalManager._on_add_age()
 
 
 func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
@@ -38,6 +44,9 @@ func resetConexion(_gen : gen,_genToDelete:gen):
 	_gen.DelConexion(_genToDelete)
 	pass
 
+func checkCompatibility():
+	pass
+	
 
 func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	print("nuevo hijo")
@@ -48,3 +57,4 @@ func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	p.rightGen = b
 	add_child(p)
 	SignalManager.buffer[0] = instantiatedPiece
+	
