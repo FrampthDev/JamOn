@@ -39,9 +39,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "AreaMouse":
 		SignalManager.PieceExit.emit(self)
 
-func _init() -> void:
+func _ready() -> void:
 	
-	#name_assign()
+	assign_name_and_img()
 	
 	for i in 8:
 		squareBuffer.append(null)
@@ -54,6 +54,7 @@ func switchGens() -> void:
 	rightGen = temp
 	
 	flipX = !flipX
+	
 	$Icon.set_flip_h(flipX)
 	
 	print("piece flipped ", "flipX ", flipX)
@@ -68,4 +69,10 @@ func kill_piece() -> void:
 	#SignalManager.squareArray[][] = null
 	queue_free()
 
-#func assign_piece_name() -> void: var piece_name = GameManager.get_child(0).get_piece_name()
+func assign_name_and_img() -> void:
+	
+	var royal_animal = GameManager.get_node("NamesGenerator").get_royal_animal()
+	
+	piece_name = royal_animal.keys()[0]
+	
+	$Icon.texture = load(royal_animal[piece_name])	
