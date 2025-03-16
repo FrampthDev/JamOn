@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gl7pcavf5owf"]
 
-[ext_resource type="Script" path="res://NewGenTree.gd" id="4_e76aw"]
+[ext_resource type="Script" uid="uid://dq14aebw8tex3" path="res://NewGenTree.gd" id="4_e76aw"]
 
 [node name="GenTree" type="Node2D"]
 
