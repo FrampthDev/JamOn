@@ -1,6 +1,8 @@
 extends Node2D
 
 var piecePrefab = preload("res://Scenes/piece.tscn")
+
+var genTree : Node2D
 var instantiatedPiece
 var PositionCont
 var PositionArray
@@ -13,6 +15,7 @@ func _ready() -> void:
 	PositionCont = GameManager.get_node("PositionArray").cont
 	PositionArray = GameManager.get_node("PositionArray").Positions
 	NewPiece(gen.new(),gen.new())
+	genTree = $GenTree.get_node("Node2D")
 
 func _process(delta: float) -> void:
 	if SignalManager._on_add_age() != null:
@@ -45,8 +48,16 @@ func checkCompatibility():
 	pass
 	
 
-func isCompatible(g_a:gen,g_b:gen)-> bool:
+func IsCompatible(g_a:gen,g_b:gen)-> bool:
 	var compatible : bool
+	var g_a_isIn:gen = genTree.searchCompatibility(g_a)
+	print(g_a_isIn.conexions)
+	if g_a_isIn != null:
+		for i in g_a_isIn.conexions:
+			print ("aaaaa: ",i.id)
+			if i.id == g_b.id: compatible=true
+	print ("bbbbb: ",g_b.id)
+	if g_a.id == g_a.id: compatible = true
 	return compatible
 
 func NewChild(a: gen, b: gen, pos: Vector2) -> void:

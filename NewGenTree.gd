@@ -96,5 +96,11 @@ func isInMatrix(g : gen):
 			j+=1
 		i+=1
 		return isIn
-func searchConexions(g:gen):
-	pass
+func searchCompatibility(g:gen)-> gen:
+	for i in MatrixSize:
+		for j in MatrixSize:
+			if genMatrix[i][j] != null:
+				if genMatrix[i][j].id != g.id:
+					return genMatrix[i][j]
+
+	return null

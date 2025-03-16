@@ -33,5 +33,5 @@ func _process(delta: float) -> void:
 		age += 1
 	if age > MaxGenAge:
 		SignalManager.MaxGenAge.emit(self)
-		
+
 	
