@@ -6,6 +6,8 @@ signal PieceExit
 signal SquareEnter
 signal SquareExit
 
+signal AddAge
+
 var gameScene: Node2D
 
 var squareArray
@@ -111,6 +113,8 @@ func moveLeftBuffer(i: int) -> void:
 
 func Start(array: Array) -> void:
 	squareArray = array
+
+
 
 #__________________________________________________________________________________________________
 
@@ -225,3 +229,7 @@ func Match(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: 
 #		for j in 27:
 #			if squareArray[i][j].piece != null:
 #				draw_circle(squareArray[i][j].position, 32, Color.CRIMSON, false, 3, false)
+
+
+func _on_add_age() -> bool:
+	return true

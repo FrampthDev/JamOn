@@ -13,6 +13,9 @@ var justStarted: bool = true
 var life: int = 5
 var piece_name: String
 
+var agePiece := 0
+@export var maxAgePiece := 4 
+
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
 	squareBufferIndex += 1
@@ -87,7 +90,13 @@ func assign_name_and_img() -> void:
 	$AreaPickUp/Label.text = piece_name
 	
 	$Icon.texture = load(royal_animal[piece_name])
+
+func addAge()-> void:
+	agePiece += 1
 	
 func _process(delta: float) -> void:
 	if SignalManager.click: 
 		$AreaPickUp/Label.visible = false
+	if SignalManager.AddAge:
+		addAge()
+		
