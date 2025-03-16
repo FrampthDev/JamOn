@@ -20,4 +20,3 @@ func _init() -> void:
 			squareArray[i][j].coor = Vector2(i, j)
 			add_child(squareArray[i][j])
 	SignalManager.Start(squareArray)
-	print(squareArray)

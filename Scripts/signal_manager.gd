@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 		
 		if dragged && j != 13 && j != 27 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
 			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
-			OccupySquare(i, j)
+			OccupySquare(i, j, buffer[0])
 			
 		click = false
 		dragged = false
@@ -55,10 +55,10 @@ func _process(_delta: float) -> void:
 				buffer[0].switchGens()
 				swap = false
 
-func OccupySquare(i: int, j: int) -> void:
+func OccupySquare(i: int, j: int, square: Node2D) -> void:
 	
-	squareArray[i][j].piece = buffer[0]
-	squareArray[i][j + 1].piece = buffer[0]
+	squareArray[i][j].piece = square
+	squareArray[i][j + 1].piece = square
 	
 	if IsLeft(i, j):
 		Match(i + 2, j - 1)
@@ -114,7 +114,6 @@ func moveLeftBuffer(i: int) -> void:
 
 func Start(array: Array) -> void:
 	squareArray = array
-
 
 func StartScene(_gameScene: Node2D) -> void:
 	gameScene = _gameScene

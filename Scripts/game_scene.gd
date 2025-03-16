@@ -56,5 +56,4 @@ func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	p.leftGen = a
 	p.rightGen = b
 	add_child(p)
-	SignalManager.buffer[0] = instantiatedPiece
-	
+	SignalManager.buffer[0] = p
