@@ -96,8 +96,8 @@ func OccupySquare() -> void:
 			j += 1
 		i += 1
 	
-	squareArray[i - 1][j - 1].piece = buffer[0]
 	squareArray[i - 1][j].piece = buffer[0]
+	squareArray[i - 1][j + 1].piece = buffer[0]
 	
 	if j > 0 && squareArray[i - 1][j - 2].piece != null:
 		Match(i - 1, j - 1, i - 1, j - 2)
@@ -131,3 +131,9 @@ func Match(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: 
 	print("match")
 	if iMovedPiece < 6:
 		gameScene.InstantiateChild(iMovedPiece, jMovedPiece, iStaticPiece, jStaticPiece, squareArray)
+
+func _draw() -> void:
+	for i in 7:
+		for j in 27:
+			if squareArray[i][j].piece != null:
+				draw_circle(squareArray[i][j].position, 32, Color.CRIMSON, false, 3, false)
