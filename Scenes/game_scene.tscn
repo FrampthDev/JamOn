@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7earpq7viliu"]
+[gd_scene load_steps=10 format=3 uid="uid://7earpq7viliu"]
 
 [ext_resource type="Script" uid="uid://cjn6p1bcs8s1g" path="res://Scripts/game_scene.gd" id="1_1ixah"]
 [ext_resource type="PackedScene" uid="uid://hiwaiimychh8" path="res://Scenes/virtual_cursor.tscn" id="1_x87qo"]
@@ -6,11 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://csdq8y6uq1tcb" path="res://Scenes/tabletop.tscn" id="2_6h5vk"]
 [ext_resource type="PackedScene" uid="uid://r0qh1ukuc7kk" path="res://Scenes/piece.tscn" id="2_b6fju"]
 [ext_resource type="PackedScene" uid="uid://gl7pcavf5owf" path="res://Scenes/GenTree/gen_tree.tscn" id="6_rgj8m"]
+[ext_resource type="Texture2D" uid="uid://dch1ffjcfnmx3" path="res://Sprites/background.png" id="7_2fmhe"]
+
+[sub_resource type="Gradient" id="Gradient_2fmhe"]
+colors = PackedColorArray(0.172549, 0.14902, 0.133333, 1, 0.172549, 0.14902, 0.133333, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7iton"]
+gradient = SubResource("Gradient_2fmhe")
+fill_from = Vector2(0, 1)
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_1ixah")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 100)
 position_smoothing_speed = 150.0
 script = ExtResource("2_1ixah")
 
@@ -22,10 +31,22 @@ camera = NodePath("../Camera2D")
 position = Vector2(-480, -100)
 
 [node name="Piece" parent="." instance=ExtResource("2_b6fju")]
-position = Vector2(-174, 260)
+position = Vector2(169, 224)
 
 [node name="Piece2" parent="." instance=ExtResource("2_b6fju")]
-position = Vector2(-389, 272)
+position = Vector2(168.79, 272)
 
 [node name="GenTree" parent="." instance=ExtResource("6_rgj8m")]
 position = Vector2(-171, -107)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -21
+texture_filter = 1
+position = Vector2(0, 93)
+texture = ExtResource("7_2fmhe")
+
+[node name="Background2" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(34.9999, 109)
+scale = Vector2(52.0313, 29.25)
+texture = SubResource("GradientTexture2D_7iton")

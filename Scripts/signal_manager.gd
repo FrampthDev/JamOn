@@ -10,6 +10,8 @@ signal AddAge
 signal MaxGenAge
 signal MaxPieceAge
 
+var sfx_player = GameManager.get_node("SFXPlayer")
+
 var gameScene: Node2D
 
 var squareArray
@@ -22,6 +24,8 @@ var swap: bool = false
 var buffer: Array
 var bufferIndex: int = 0
 var destroyPiece : Node2D
+
+var turn: int = 0
 
 
 func _input(event: InputEvent) -> void:
@@ -39,6 +43,10 @@ func _input(event: InputEvent) -> void:
 		if dragged && j != 13 && j != 27 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
 			buffer[0].position = buffer[0].squareBuffer[0].global_position + Vector2(32, 16)
 			OccupySquare(i, j, buffer[0])
+	
+			sfx_player.stream = preload("res://Audio/piece_placed.wav")
+			sfx_player.play()
+
 			
 		click = false
 		dragged = false
@@ -122,7 +130,7 @@ func StartScene(_gameScene: Node2D) -> void:
 	gameScene = _gameScene
 
 func Match(i: int, j: int, genA: gen, genB: gen) -> void:
-	if gameScene.IsCompatible(genA, genB): # FALTA QUE EXISTA EL MÉTODO ISCOMPATIBLE()
+	#if gameScene.IsCompatible(genA, genB): # FALTA QUE EXISTA EL MÉTODO ISCOMPATIBLE()
 		if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
 			gameScene.InstantiateChild(i, j, squareArray)
 

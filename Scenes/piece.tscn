@@ -28,7 +28,6 @@ radius = 3.5
 
 [node name="Piece" type="Node2D"]
 script = ExtResource("1_y70yu")
-crowns = 4
 
 [node name="AreaPickUp" type="Area2D" parent="."]
 

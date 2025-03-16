@@ -12,13 +12,12 @@ var justStarted: bool = true
 
 var crown_sprite = preload("res://Scenes/crown.tscn")
 
-@export var life: int = 5
+@export var life: int = 3
 @export var crowns: int
 
 var piece_name: String
 
-var agePiece :int = 0
-var maxAgePiece : int= 4 
+var turnCreated: int
 
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
@@ -47,6 +46,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "AreaMouse":
 		$AreaPickUp/Label.visible = false
 		SignalManager.PieceExit.emit(self)
+
 func _init() -> void:
 	leftGen = gen.new()
 	rightGen = gen.new()
@@ -54,7 +54,8 @@ func _init() -> void:
 	rightGen.Constructor("B",[],Vector2i(11,10))
 
 func _ready() -> void:
-
+	
+	turnCreated = SignalManager.turn
 	assign_name_and_img()
 	
 	$AreaPickUp/Label.visible = false
@@ -77,15 +78,6 @@ func switchGens() -> void:
 	
 	print("piece flipped ", "flipX ", flipX)
 
-func on_generation_up() -> void:
-	life -= 1
-	#animation++
-	if life <= 0: kill_piece()
-
-func kill_piece() -> void:
-	#SignalManager.squareArray[][] = null
-	queue_free()
-
 func assign_name_and_img() -> void:
 	
 	var royal_animal = GameManager.get_node("NamesGenerator").get_royal_animal()
@@ -96,17 +88,9 @@ func assign_name_and_img() -> void:
 	
 	$Icon.texture = load(royal_animal[piece_name])
 
-func addAge()-> void:
-	agePiece += 1
-	
 func _process(delta: float) -> void:
 	if SignalManager.click: 
 		$AreaPickUp/Label.visible = false
-	if SignalManager.AddAge:
-		addAge()
-	if agePiece == maxAgePiece:
-		SignalManager.destroyPiece = self
-		#print("adios", piece_name)
-		print("vida: ",agePiece, "maxVida: ",maxAgePiece)
-		
-		
+		if SignalManager.turn - turnCreated == life:
+			SignalManager.EmptySquare(squareBuffer[0].coor.x, squareBuffer[0].coor.y)
+			self.queue_free()
