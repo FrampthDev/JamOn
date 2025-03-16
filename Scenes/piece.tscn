@@ -37,6 +37,7 @@ shape = SubResource("RectangleShape2D_y70yu")
 
 [node name="Label" type="Label" parent="AreaPickUp"]
 z_index = 15
+z_as_relative = false
 texture_filter = 1
 offset_left = -41.0
 offset_top = 17.0

@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpdlclivfhm3e"]
+
+[ext_resource type="Texture2D" uid="uid://1t88td7ei38b" path="res://Sprites/portada.png" id="1_5a4fm"]
+[ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_iin1p"]
+[ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="3_v22qd"]
+
+[node name="StartScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Portada" type="Sprite2D" parent="."]
+z_index = -500
+position = Vector2(56.5, 5)
+scale = Vector2(-2.066, 2.104)
+texture = ExtResource("1_5a4fm")
+
+[node name="Portada2" type="Sprite2D" parent="."]
+z_index = -512
+position = Vector2(7476, -602)
+scale = Vector2(22.2227, 12.2674)
+texture = ExtResource("1_5a4fm")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_iin1p")
+script = ExtResource("3_v22qd")
+
+[node name="Button" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 2
+offset_left = -176.0
+offset_top = 338.0
+offset_right = 382.0
+offset_bottom = 433.0
+theme = ExtResource("2_iin1p")
+theme_override_font_sizes/font_size = 43
+text = "Jugar otra partida"
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="TextEdit" type="Label" parent="."]
+offset_left = -269.0
+offset_top = -456.0
+offset_right = 381.0
+offset_bottom = -164.0
+theme = ExtResource("2_iin1p")
+theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
+theme_override_font_sizes/font_size = 55
+text = "Gracias por jugar!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextEdit2" type="Label" parent="."]
+offset_left = -332.0
+offset_top = -299.0
+offset_right = 318.0
+offset_bottom = 317.0
+theme = ExtResource("2_iin1p")
+theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
+theme_override_font_sizes/font_size = 35
+text = "Diseñadora: 
+Paula Soto
+
+Programadores:
+Javier Zazo
+Miguel Ángel
+Carlos Dochao
+
+Arte:
+Enzo León
+
+Música y SFX:
+Javier Carricondo"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

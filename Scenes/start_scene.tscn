@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj1fq176tly7d"]
+[gd_scene load_steps=4 format=3 uid="uid://bj1fq176tly7d"]
 
+[ext_resource type="Texture2D" uid="uid://1t88td7ei38b" path="res://Sprites/portada.png" id="1_8turk"]
 [ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="1_aeweq"]
 [ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_8turk"]
 
 [node name="StartScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Portada" type="Sprite2D" parent="."]
+z_index = -500
+position = Vector2(3.5, 5)
+scale = Vector2(2.06593, 2.10417)
+texture = ExtResource("1_8turk")
+
+[node name="Portada2" type="Sprite2D" parent="."]
+z_index = -512
+position = Vector2(7476, -602)
+scale = Vector2(22.2227, 12.2674)
+texture = ExtResource("1_8turk")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -17,26 +30,28 @@ grow_vertical = 2
 theme = ExtResource("2_8turk")
 script = ExtResource("1_aeweq")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -942.0
-offset_top = -373.0
-offset_right = -499.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="Control/AspectRatioContainer"]
+[node name="Button" type="Button" parent="Control"]
 texture_filter = 1
 layout_mode = 2
+offset_left = -137.0
+offset_top = 145.0
+offset_right = 201.0
+offset_bottom = 246.0
 theme = ExtResource("2_8turk")
 text = "Jugar"
 text_overrun_behavior = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="Control/AspectRatioContainer/Button" to="Control" method="_on_button_pressed"]
+[node name="TextEdit" type="Label" parent="."]
+offset_left = -249.0
+offset_top = -259.0
+offset_right = 401.0
+offset_bottom = 33.0
+theme = ExtResource("2_8turk")
+theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
+theme_override_font_sizes/font_size = 112
+text = "Animal Dominion"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

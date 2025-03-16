@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dch1ffjcfnmx3" path="res://Sprites/background.png" id="7_2fmhe"]
 
 [sub_resource type="Gradient" id="Gradient_2fmhe"]
-colors = PackedColorArray(0.172549, 0.14902, 0.133333, 1, 0.172549, 0.14902, 0.133333, 1)
+colors = PackedColorArray(0.172549, 0.14902, 0.133333, 1, 0.156863, 0.133333, 0.113725, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7iton"]
 gradient = SubResource("Gradient_2fmhe")
