@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://r0qh1ukuc7kk"]
+[gd_scene load_steps=9 format=3 uid="uid://r0qh1ukuc7kk"]
 
 [ext_resource type="Script" uid="uid://dgas46lyqf363" path="res://Scripts/piece.gd" id="1_y70yu"]
 [ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="2_l2hco"]
 [ext_resource type="Texture2D" uid="uid://cpl8ovjawqc4f" path="res://Sprites/WhatsApp Image 2025-03-15 at 12.55.26.jpeg" id="2_y70yu"]
+[ext_resource type="Texture2D" uid="uid://bdg44smqo5mdw" path="res://Sprites/icon.svg" id="4_66160"]
+[ext_resource type="Script" uid="uid://dl0m5ncckxw5l" path="res://Scenes/GensScripts.gd" id="4_xe4ox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y70yu"]
 size = Vector2(63.5, 32)
@@ -47,6 +49,44 @@ shape = SubResource("CircleShape2D_y70yu")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_y70yu")
+
+[node name="Gens" type="Node2D" parent="."]
+position = Vector2(-27, -14)
+script = ExtResource("4_xe4ox")
+genA = ExtResource("4_66160")
+genB = ExtResource("4_66160")
+genC = ExtResource("4_66160")
+genD = ExtResource("4_66160")
+genE = ExtResource("4_66160")
+genF = ExtResource("4_66160")
+genG = ExtResource("4_66160")
+genH = ExtResource("4_66160")
+
+[node name="LeftGen" type="Node2D" parent="Gens"]
+position = Vector2(49, 12)
+
+[node name="LeftSprite2D" type="Sprite2D" parent="Gens/LeftGen"]
+scale = Vector2(0.0976563, 0.0976563)
+
+[node name="leftLabel" type="Label" parent="Gens/LeftGen"]
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 35.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="RightGen" type="Node2D" parent="Gens"]
+position = Vector2(5, 12)
+
+[node name="RightSprite2D" type="Sprite2D" parent="Gens/RightGen"]
+scale = Vector2(0.0976563, 0.0976563)
+
+[node name="rightLabel" type="Label" parent="Gens/RightGen"]
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 35.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="area_entered" from="AreaPickUp" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="AreaPickUp" to="." method="_on_area_2d_area_exited"]

@@ -40,10 +40,15 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "AreaMouse":
 		$AreaPickUp/Label.visible = false
 		SignalManager.PieceExit.emit(self)
-		
+func _init() -> void:
+	leftGen = gen.new()
+	rightGen = gen.new()
+	leftGen.Constructor("A",[],Vector2i(10,10))
+	rightGen.Constructor("B",[],Vector2i(11,10))
 
 func _ready() -> void:
-	
+
+		
 	assign_name_and_img()
 	
 	$AreaPickUp/Label.visible = false

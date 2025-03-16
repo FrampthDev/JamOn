@@ -8,15 +8,14 @@ func _ready() -> void:
 	PositionArray = $"../PositionArray".Positions
 	PositionCont = $"../PositionArray".cont
 
-	NewPiece(gen.new(),gen.new())
-	NewPiece(gen.new(),gen.new())
-	NewPiece(gen.new(),gen.new())
-	NewPiece(gen.new(),gen.new())
+	#NewPiece(gen.new(),gen.new())
+	#NewPiece(gen.new(),gen.new())
+	#NewPiece(gen.new(),gen.new())
+	#NewPiece(gen.new(),gen.new())
 
 	#NewPiece()
 	#NewPiece()
 
-		
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1
 	p = piece.instantiate()
