@@ -22,6 +22,7 @@ var turnCreated: int
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
 	squareBufferIndex += 1
+	squareBuffer[0].piece = self
 	print(squareBufferIndex)
 
 func SquareExit(square: Node2D) -> void:
@@ -91,8 +92,10 @@ func assign_name_and_img() -> void:
 func _process(delta: float) -> void:
 	if SignalManager.click: 
 		$AreaPickUp/Label.visible = false
-		if SignalManager.turn - turnCreated == life:
-			SignalManager.EmptySquare(squareBuffer[0].coor.x, squareBuffer[0].coor.y)
-			self.queue_free()
-			
+		
 		if crowns == 4: GameManager.Game_Win()
+func ChangeIcon(i: int) -> void:
+	if i == 1:
+		$Icon/Sprite2D.visible = true
+	else: if i == 2:
+		$Icon/Sprite2D2.visible = true

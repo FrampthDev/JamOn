@@ -75,4 +75,3 @@ func NewChild(a: gen, b: gen, pos: Vector2, crowns:int) -> void:
 	p.crowns = crowns
 	add_child(p)
 	SignalManager.buffer[0] = p
-	SignalManager.turn += 1

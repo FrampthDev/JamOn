@@ -138,6 +138,18 @@ func Match(i: int, j: int, genA: gen, genB: gen,crown: int) -> void:
 	#if gameScene.IsCompatible(genA, genB): # FALTA QUE EXISTA EL MÉTODO ISCOMPATIBLE()
 		if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
 			gameScene.InstantiateChild(i, j, squareArray,genA,genB,crown)
+			turn += 1
+			for k in 8:
+				for l in 28:
+					if squareArray[k][l].piece != null:
+						var piece = squareArray[k][l].piece
+						if turn - piece.turnCreated == piece.life - 2:
+							piece.ChangeIcon(1)
+						else: if turn - piece.turnCreated == piece.life - 1:
+								piece.ChangeIcon(2)
+						else: if turn - piece.turnCreated == piece.life:
+								SignalManager.EmptySquare(k, l)
+								piece.queue_free()
 
 
 #__________________________________________________________________________________________________
