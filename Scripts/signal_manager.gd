@@ -60,10 +60,10 @@ func OccupySquare(i: int, j: int) -> void:
 	squareArray[i][j + 1].piece = buffer[0]
 	
 	if IsLeft(i, j):
-		#Match(i, j)
+		Match(i + 2, j - 1)
 		print("está a la izquierda")
 	if IsRight(i, j):
-		#Match(i, j)
+		Match(i + 2, j + 1)
 		print("está a la derecha")
 
 func EmptySquare(i, j) -> void:
@@ -114,6 +114,14 @@ func moveLeftBuffer(i: int) -> void:
 func Start(array: Array) -> void:
 	squareArray = array
 
+
+func StartScene(_gameScene: Node2D) -> void:
+	gameScene = _gameScene
+
+func Match(i: int, j: int) -> void:
+	print("match")
+	if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
+		gameScene.InstantiateChild(i, j, squareArray)
 
 
 #__________________________________________________________________________________________________
@@ -216,13 +224,7 @@ func Start(array: Array) -> void:
 #func Start(array: Array) -> void:
 #	squareArray = array
 	
-func StartScene(_gameScene: Node2D) -> void:
-	gameScene = _gameScene
 
-func Match(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: int) -> void:
-	print("match")
-	if iMovedPiece < 6:
-		gameScene.InstantiateChild(iMovedPiece, jMovedPiece, iStaticPiece, jStaticPiece, squareArray)
 
 #func _draw() -> void:
 #	for i in 7:

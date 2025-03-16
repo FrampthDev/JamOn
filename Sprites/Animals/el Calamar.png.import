@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcbty1ga4tyj1"
-path="res://.godot/imported/el Gnomo.jpeg-994f8b64dfd560c5b3dff6a9975a37c3.ctex"
+uid="uid://c35ju8s8eq3ra"
+path="res://.godot/imported/el Calamar.png-e0360d7396c20e2b3066bcd8102e9050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/el Gnomo.jpeg"
-dest_files=["res://.godot/imported/el Gnomo.jpeg-994f8b64dfd560c5b3dff6a9975a37c3.ctex"]
+source_file="res://Sprites/Animals/el Calamar.png"
+dest_files=["res://.godot/imported/el Calamar.png-e0360d7396c20e2b3066bcd8102e9050.ctex"]
 
 [params]
 

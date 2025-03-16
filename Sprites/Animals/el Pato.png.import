@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csmi67rnkscmv"
-path="res://.godot/imported/menu_arrow.png-ccdf2b2f26a6d4fb315743766beac790.ctex"
+uid="uid://b2yyqrbe3akuk"
+path="res://.godot/imported/el Pato.png-d6b55f9f0b3aae2a0c801a28da526a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu_arrow.png"
-dest_files=["res://.godot/imported/menu_arrow.png-ccdf2b2f26a6d4fb315743766beac790.ctex"]
+source_file="res://Sprites/Animals/el Pato.png"
+dest_files=["res://.godot/imported/el Pato.png-d6b55f9f0b3aae2a0c801a28da526a63.ctex"]
 
 [params]
 

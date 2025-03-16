@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://r0qh1ukuc7kk"]
+[gd_scene load_steps=16 format=3 uid="uid://r0qh1ukuc7kk"]
 
 [ext_resource type="Script" uid="uid://dgas46lyqf363" path="res://Scripts/piece.gd" id="1_y70yu"]
 [ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="2_l2hco"]
-[ext_resource type="Texture2D" uid="uid://cpl8ovjawqc4f" path="res://Sprites/WhatsApp Image 2025-03-15 at 12.55.26.jpeg" id="2_y70yu"]
-[ext_resource type="Texture2D" uid="uid://bdg44smqo5mdw" path="res://Sprites/icon.svg" id="4_66160"]
 [ext_resource type="Script" uid="uid://dl0m5ncckxw5l" path="res://Scripts/GensScripts.gd" id="4_xe4ox"]
+[ext_resource type="Texture2D" uid="uid://bn2aqkom1elib" path="res://Sprites/Gens/CIRCULO_.png" id="5_618xn"]
+[ext_resource type="Texture2D" uid="uid://ywqj4xat34gh" path="res://Sprites/Gens/CUADRADO.png" id="6_y4w7p"]
+[ext_resource type="Texture2D" uid="uid://dh30iae7b2tqr" path="res://Sprites/Gens/TRIANGULO.png" id="7_j6lfl"]
+[ext_resource type="Texture2D" uid="uid://b8yhw2vi3wal0" path="res://Sprites/Gens/DIAMANTE.png" id="8_vvt2q"]
+[ext_resource type="Texture2D" uid="uid://d1qsr3ygggnyp" path="res://Sprites/Gens/OVALO.png" id="9_82nh7"]
+[ext_resource type="Texture2D" uid="uid://fthjtrranny3" path="res://Sprites/Gens/PENTAGONO.png" id="10_dudl2"]
+[ext_resource type="Texture2D" uid="uid://b368tmdpmwyii" path="res://Sprites/Gens/CORAZON.png" id="11_pl4t3"]
+[ext_resource type="Texture2D" uid="uid://cukfsvilparc6" path="res://Sprites/Gens/ESTRELLA.png" id="12_ytyah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y70yu"]
 size = Vector2(63.5, 32)
@@ -18,6 +24,9 @@ outline_color = Color(0.282353, 0.109804, 0, 0.411765)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y70yu"]
 radius = 3.5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umus7"]
+load_path = "res://.godot/imported/WhatsApp Image 2025-03-15 at 12.55.26.jpeg-f186862afd1e655ead0d78b6b7e5aa96.ctex"
 
 [node name="Piece" type="Node2D"]
 script = ExtResource("1_y70yu")
@@ -48,19 +57,19 @@ position = Vector2(-15.5, 0)
 shape = SubResource("CircleShape2D_y70yu")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_y70yu")
+texture = SubResource("CompressedTexture2D_umus7")
 
 [node name="Gens" type="Node2D" parent="Icon"]
 position = Vector2(-27, -14)
 script = ExtResource("4_xe4ox")
-genA = ExtResource("4_66160")
-genB = ExtResource("4_66160")
-genC = ExtResource("4_66160")
-genD = ExtResource("4_66160")
-genE = ExtResource("4_66160")
-genF = ExtResource("4_66160")
-genG = ExtResource("4_66160")
-genH = ExtResource("4_66160")
+genA = ExtResource("5_618xn")
+genB = ExtResource("6_y4w7p")
+genC = ExtResource("7_j6lfl")
+genD = ExtResource("8_vvt2q")
+genE = ExtResource("9_82nh7")
+genF = ExtResource("10_dudl2")
+genG = ExtResource("11_pl4t3")
+genH = ExtResource("12_ytyah")
 
 [node name="LeftGen" type="Node2D" parent="Icon/Gens"]
 position = Vector2(49, 12)

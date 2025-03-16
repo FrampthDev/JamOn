@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpl8ovjawqc4f"
-path="res://.godot/imported/WhatsApp Image 2025-03-15 at 12.55.26.jpeg-f186862afd1e655ead0d78b6b7e5aa96.ctex"
+uid="uid://ctigxc4qserbe"
+path="res://.godot/imported/el Kiwi.png-f64528edec31fde8c6a9d1da171b2eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/WhatsApp Image 2025-03-15 at 12.55.26.jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2025-03-15 at 12.55.26.jpeg-f186862afd1e655ead0d78b6b7e5aa96.ctex"]
+source_file="res://Sprites/Animals/el Kiwi.png"
+dest_files=["res://.godot/imported/el Kiwi.png-f64528edec31fde8c6a9d1da171b2eb8.ctex"]
 
 [params]
 
