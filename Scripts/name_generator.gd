@@ -8,8 +8,6 @@ func _ready() -> void:
 	generate_royal_names()
 		
 	generate_animal_names()
-	
-	print(get_royal_animal())
 
 func to_roman(num: int) -> String:
 	
