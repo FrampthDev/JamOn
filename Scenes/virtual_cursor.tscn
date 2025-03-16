@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://hiwaiimychh8"]
+[gd_scene load_steps=3 format=3 uid="uid://hiwaiimychh8"]
 
 [ext_resource type="Script" uid="uid://dg7njq10f8ci1" path="res://Scripts/virtual_cursor.gd" id="1_505s3"]
-[ext_resource type="Texture2D" uid="uid://bdg44smqo5mdw" path="res://Sprites/icon.svg" id="2_6kebs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myrik"]
 radius = 60.0
@@ -14,9 +13,6 @@ script = ExtResource("1_505s3")
 
 [node name="ColliderMouse" type="CollisionShape2D" parent="AreaMouse"]
 shape = SubResource("CircleShape2D_myrik")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6kebs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

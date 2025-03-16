@@ -5,8 +5,8 @@
 [node name="Crown Sprite" type="Sprite2D"]
 modulate = Color(0.8, 0.8, 0.8, 1)
 texture_filter = 1
-position = Vector2(3.45536, 1.75)
-scale = Vector2(0.462662, 0.5)
+position = Vector2(3.5, 1.75)
+scale = Vector2(0.454546, 0.5)
 texture = ExtResource("1_1wk3g")
 
 [node name="Shadow" type="Sprite2D" parent="."]
