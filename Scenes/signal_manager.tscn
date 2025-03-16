@@ -7,6 +7,7 @@ script = ExtResource("1_bfmq8")
 
 [connection signal="AddAge" from="." to="." method="_on_add_age"]
 [connection signal="MaxGenAge" from="." to="." method="_on_max_gen_age"]
+[connection signal="MaxPieceAge" from="." to="." method="_on_max_piece_age"]
 [connection signal="PieceEnter" from="." to="." method="_on_piece_enter"]
 [connection signal="PieceExit" from="." to="." method="_on_piece_exit"]
 [connection signal="SquareEnter" from="." to="." method="_on_square_enter"]

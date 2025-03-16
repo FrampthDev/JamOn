@@ -17,6 +17,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if SignalManager._on_add_age() != null:
 		var delgen := SignalManager._on_add_age()
+	if SignalManager.destroyPiece != null:
+		SignalManager.destroyPiece.queue_free()
 
 func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
 		NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
@@ -31,11 +33,10 @@ func NewPiece(a:gen,b:gen):
 
 	# Si la funcion isleft o right devuelven algo, comprobar si los genes son los buenos e instanciar una ficha nueva con los genes compatibles
 	
-func addAge():
-	SignalManager.AddAge.emit()
+
 func destroyPiece():
 	pass
-func resetConexion(_gen : gen,_genToDelete:gen):
+func resetConexion(_gen : gen,_genToDelete : gen):
 	# borra la conexion g y genera un nuevo nodo 
 	_gen.DelConexion(_genToDelete)
 	pass
@@ -51,5 +52,7 @@ func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	p.position = pos
 	p.leftGen = a
 	p.rightGen = b
+	p.agePiece = 0
 	add_child(p)
 	SignalManager.buffer[0] = p
+	#SignalManager.AddAge.emit()

@@ -31,5 +31,7 @@ func DelConexion(deleteGen : gen) -> void:
 func _process(delta: float) -> void:
 	if SignalManager.AddAge:
 		age += 1
-	if age >= MaxGenAge:
+	if age > MaxGenAge:
 		SignalManager.MaxGenAge.emit(self)
+		
+	

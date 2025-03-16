@@ -8,6 +8,7 @@ signal SquareExit
 
 signal AddAge
 signal MaxGenAge
+signal MaxPieceAge
 
 var gameScene: Node2D
 
@@ -20,6 +21,8 @@ var swap: bool = false
 
 var buffer: Array
 var bufferIndex: int = 0
+var destroyPiece : Node2D
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click") && buffer[0] != null:
@@ -236,6 +239,8 @@ func Match(i: int, j: int, genA: gen, genB: gen) -> void:
 func _on_add_age() -> bool:
 	return true
 
-
 func _on_max_gen_age(g:gen) -> gen:
 	return g
+
+func _on_max_piece_age(p:Node2D) -> void:
+	destroyPiece = p

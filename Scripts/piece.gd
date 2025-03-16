@@ -17,8 +17,8 @@ var crown_sprite = preload("res://Scenes/crown.tscn")
 
 var piece_name: String
 
-var agePiece := 0
-@export var maxAgePiece := 4 
+var agePiece :int = 0
+var maxAgePiece : int= 4 
 
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
@@ -104,4 +104,9 @@ func _process(delta: float) -> void:
 		$AreaPickUp/Label.visible = false
 	if SignalManager.AddAge:
 		addAge()
+	if agePiece == maxAgePiece:
+		SignalManager.destroyPiece = self
+		#print("adios", piece_name)
+		print("vida: ",agePiece, "maxVida: ",maxAgePiece)
+		
 		
