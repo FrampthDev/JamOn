@@ -15,12 +15,3 @@ func _ready() -> void:
 
 	#NewPiece()
 	#NewPiece()
-
-func NewPiece(a:gen,b:gen):
-	PositionCont += 1
-	p = piece.instantiate()
-	p.position = PositionArray[PositionCont % PositionArray.size()]
-	p.leftGen = a
-	p.rightGen = b
-	add_child(p)
-	pass
