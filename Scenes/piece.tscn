@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dgas46lyqf363" path="res://Scripts/piece.gd" id="1_y70yu"]
 [ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="2_l2hco"]
 [ext_resource type="Texture2D" uid="uid://c35ju8s8eq3ra" path="res://Sprites/Animals/el Calamar.png" id="3_618xn"]
-[ext_resource type="Script" path="res://Scripts/GensScripts.gd" id="4_xe4ox"]
+[ext_resource type="Script" uid="uid://dl0m5ncckxw5l" path="res://Scripts/GensScripts.gd" id="4_xe4ox"]
 [ext_resource type="Texture2D" uid="uid://bn2aqkom1elib" path="res://Sprites/Gens/CIRCULO_.png" id="5_618xn"]
 [ext_resource type="Texture2D" uid="uid://ywqj4xat34gh" path="res://Sprites/Gens/CUADRADO.png" id="6_y4w7p"]
 [ext_resource type="Texture2D" uid="uid://dh30iae7b2tqr" path="res://Sprites/Gens/TRIANGULO.png" id="7_j6lfl"]
@@ -28,7 +28,6 @@ radius = 3.5
 
 [node name="Piece" type="Node2D"]
 script = ExtResource("1_y70yu")
-crowns = 4
 
 [node name="AreaPickUp" type="Area2D" parent="."]
 

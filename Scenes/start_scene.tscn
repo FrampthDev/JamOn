@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2mypdtxie7cq"]
+[gd_scene load_steps=3 format=3 uid="uid://bj1fq176tly7d"]
 
-[ext_resource type="Script" path="res://Scripts/scene_control.gd" id="1_aeweq"]
+[ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="1_aeweq"]
 [ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_8turk"]
 
 [node name="StartScene" type="Node2D"]
