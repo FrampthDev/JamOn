@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw6ghfvpdfvef"]
 
 [ext_resource type="Script" uid="uid://clm707abuqd68" path="res://Scripts/game_manager.gd" id="1_m2tc1"]
-[ext_resource type="Script" uid="uid://dnv10a8wemmg" path="res://Scripts/position_array.gd" id="2_b7dir"]
+[ext_resource type="Script" path="res://Scripts/position_array.gd" id="2_b7dir"]
 [ext_resource type="Script" uid="uid://cyjrw3m64thn2" path="res://Scripts/name_generator.gd" id="2_bwyv8"]
-[ext_resource type="Script" uid="uid://dwneolymwhkys" path="res://Scripts/game_logic.gd" id="4_mmuqr"]
+[ext_resource type="Script" path="res://Scripts/game_logic.gd" id="4_mmuqr"]
 [ext_resource type="AudioStream" uid="uid://j1ss4u6n20ae" path="res://Audio/soundtrack.mp3" id="4_xqbpr"]
 
 [node name="GameManager" type="Node2D"]

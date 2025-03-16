@@ -26,10 +26,10 @@ func _process(delta: float) -> void:
 	if SignalManager.destroyPiece != null:
 		SignalManager.destroyPiece.queue_free()
 
-func InstantiateChild(i: int, j: int, squareArray: Array) -> void:
+func InstantiateChild(i: int, j: int, squareArray: Array,genA:gen,genB:gen,crowns:int) -> void:
 	sfx_player.stream = preload("res://Audio/creacion.mp3")
 	sfx_player.play()
-	NewChild(gen.new(), gen.new(), squareArray[i][j].global_position + Vector2(32, 16))
+	NewChild(genB, genA, squareArray[i][j].global_position + Vector2(32, 16),crowns, squareArray, i, j)
 
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1
@@ -65,13 +65,15 @@ func IsCompatible(g_a:gen,g_b:gen)-> bool:
 	if g_a.id == g_a.id: compatible = true
 	return compatible
 
-func NewChild(a: gen, b: gen, pos: Vector2) -> void:
+func NewChild(a: gen, b: gen, pos: Vector2, crowns:int, squareArray, i, j) -> void:
 	print("nuevo hijo")
 	PositionCont += 1
 	p = piecePrefab.instantiate()
 	p.position = pos
 	p.leftGen = a
 	p.rightGen = b
+	p.crowns = crowns
 	add_child(p)
 	SignalManager.buffer[0] = p
-	SignalManager.turn += 1
+	squareArray[i][j].piece = p
+	squareArray[i][j].piece.life += 1
