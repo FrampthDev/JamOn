@@ -47,6 +47,10 @@ func checkCompatibility():
 	pass
 	
 
+func isCompatible(g_a:gen,g_b:gen)-> bool:
+	var compatible : bool
+	return compatible
+
 func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	print("nuevo hijo")
 	PositionCont += 1
