@@ -94,3 +94,5 @@ func _process(delta: float) -> void:
 		if SignalManager.turn - turnCreated == life:
 			SignalManager.EmptySquare(squareBuffer[0].coor.x, squareBuffer[0].coor.y)
 			self.queue_free()
+			
+		if crowns == 4: GameManager.Game_Win()
