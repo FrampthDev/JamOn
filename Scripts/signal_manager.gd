@@ -36,11 +36,11 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("Click") && buffer[0] != null:
 		click = true
-		if !buffer[0].justStarted && buffer[0].squareBuffer[0] != null && buffer[0].squareBuffer[0].piece == buffer[0]:
+		if buffer[0].justStarted && buffer[0].squareBuffer[0] != null && buffer[0].squareBuffer[0].piece == buffer[0]:
 			var i: int = buffer[0].squareBuffer[0].coor.x
 			var j: int = buffer[0].squareBuffer[0].coor.y
 			EmptySquare(i, j)
-		buffer[0].justStarted = false
+		#buffer[0].justStarted = false
 	else: if event.is_action_released("Click") && bufferIndex > 0 && buffer[0].squareBufferIndex > 0:
 		var i: int = buffer[0].squareBuffer[0].coor.x
 		var j: int = buffer[0].squareBuffer[0].coor.y
@@ -54,7 +54,7 @@ func _input(event: InputEvent) -> void:
 
 			
 		click = false
-		dragged = false
+		#dragged = false
 	if dragged && event.is_action_pressed("SwapGens"):
 		swap = true
 
@@ -150,6 +150,7 @@ func Match(i: int, j: int, genA: gen, genB: gen,crown: int) -> void:
 						else: if turn - piece.turnCreated == piece.life:
 								SignalManager.EmptySquare(k, l)
 								piece.queue_free()
+								bufferIndex -= 1
 
 
 #__________________________________________________________________________________________________
