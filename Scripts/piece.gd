@@ -88,3 +88,7 @@ func assign_name_and_img() -> void:
 	$AreaPickUp/Label.text = piece_name
 	
 	$Icon.texture = load(royal_animal[piece_name])
+	
+func _process(delta: float) -> void:
+	if SignalManager.click: 
+		$AreaPickUp/Label.visible = false

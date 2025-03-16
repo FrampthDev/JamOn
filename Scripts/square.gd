@@ -1,6 +1,6 @@
 extends Node2D
 
-var coor: int
+var coor: Vector2
 var piece: Node2D
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

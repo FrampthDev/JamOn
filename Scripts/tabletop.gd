@@ -17,5 +17,7 @@ func _init() -> void:
 				squareArray[i][j].position = Vector2(j * squareSize, i * squareSize)
 			else:
 				squareArray[i][j].position = Vector2(j * squareSize + 64, i * squareSize)
+			squareArray[i][j].coor = Vector2(i, j)
 			add_child(squareArray[i][j])
 	SignalManager.Start(squareArray)
+	print(squareArray)
