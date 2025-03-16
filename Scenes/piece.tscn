@@ -75,6 +75,8 @@ genH = ExtResource("12_ytyah")
 position = Vector2(49, 12)
 
 [node name="LeftSprite2D" type="Sprite2D" parent="Icon/Gens/LeftGen"]
+position = Vector2(1, 0)
+scale = Vector2(0.9, 0.9)
 
 [node name="leftLabel" type="Label" parent="Icon/Gens/LeftGen"]
 offset_left = -5.0
@@ -87,6 +89,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 position = Vector2(5, 12)
 
 [node name="RightSprite2D" type="Sprite2D" parent="Icon/Gens/RightGen"]
+position = Vector2(-1, 0)
+scale = Vector2(0.9, 0.9)
 
 [node name="rightLabel" type="Label" parent="Icon/Gens/RightGen"]
 offset_left = -5.0
