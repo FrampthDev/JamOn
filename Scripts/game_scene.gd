@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 func InstantiateChild(i: int, j: int, squareArray: Array,genA:gen,genB:gen,crowns:int) -> void:
 	sfx_player.stream = preload("res://Audio/creacion.mp3")
 	sfx_player.play()
-	NewChild(genB, genA, squareArray[i][j].global_position + Vector2(32, 16),crowns)
+	NewChild(genB, genA, squareArray[i][j].global_position + Vector2(32, 16),crowns, squareArray, i, j)
 
 func NewPiece(a:gen,b:gen):
 	PositionCont += 1
@@ -65,7 +65,7 @@ func IsCompatible(g_a:gen,g_b:gen)-> bool:
 	if g_a.id == g_a.id: compatible = true
 	return compatible
 
-func NewChild(a: gen, b: gen, pos: Vector2, crowns:int) -> void:
+func NewChild(a: gen, b: gen, pos: Vector2, crowns:int, squareArray, i, j) -> void:
 	print("nuevo hijo")
 	PositionCont += 1
 	p = piecePrefab.instantiate()
@@ -75,3 +75,5 @@ func NewChild(a: gen, b: gen, pos: Vector2, crowns:int) -> void:
 	p.crowns = crowns
 	add_child(p)
 	SignalManager.buffer[0] = p
+	squareArray[i][j].piece = p
+	squareArray[i][j].piece.life += 1

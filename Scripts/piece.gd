@@ -17,12 +17,11 @@ var crown_sprite = preload("res://Scenes/crown.tscn")
 
 var piece_name: String
 
-var turnCreated: int
+var turnCreated: int#
 
 func SquareEnter(square: Node2D) -> void:
 	squareBuffer[squareBufferIndex] = square
 	squareBufferIndex += 1
-	squareBuffer[0].piece = self
 	print(squareBufferIndex)
 
 func SquareExit(square: Node2D) -> void:
@@ -76,6 +75,9 @@ func switchGens() -> void:
 	flipX = !flipX
 	
 	$Icon.set_flip_h(flipX)
+	var a = $Icon/Gens/LeftGen/LeftSprite2D.texture
+	$Icon/Gens/LeftGen/LeftSprite2D.texture = $Icon/Gens/RightGen/RightSprite2D.texture
+	$Icon/Gens/RightGen/RightSprite2D.texture = a
 	
 	print("piece flipped ", "flipX ", flipX)
 
