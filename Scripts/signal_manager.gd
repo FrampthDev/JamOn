@@ -136,5 +136,6 @@ func Match(iMovedPiece: int, jMovedPiece: int, iStaticPiece: int, jStaticPiece: 
 func _draw() -> void:
 	for i in 7:
 		for j in 27:
-			if squareArray[i][j].piece != null:
-				draw_circle(squareArray[i][j].position, 32, Color.CRIMSON, false, 3, false)
+			pass
+			#if squareArray[i][j].piece != null:
+				#draw_circle(squareArray[i][j].position, 32, Color.CRIMSON, false, 3, false)

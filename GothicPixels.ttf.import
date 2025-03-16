@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bnojuwlofcqmx"
-path="res://.godot/imported/Bescii-Mono.ttf-a545677a13d49d8c170b1f4d038c707f.fontdata"
+uid="uid://dh6jdgx68neyo"
+path="res://.godot/imported/GothicPixels.ttf-4b8b3d273ddd649070b08fb7bffaba96.fontdata"
 
 [deps]
 
-source_file="res://Scenes/Bescii-Mono.ttf"
-dest_files=["res://.godot/imported/Bescii-Mono.ttf-a545677a13d49d8c170b1f4d038c707f.fontdata"]
+source_file="res://GothicPixels.ttf"
+dest_files=["res://.godot/imported/GothicPixels.ttf-4b8b3d273ddd649070b08fb7bffaba96.fontdata"]
 
 [params]
 

@@ -1,29 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj1fq176tly7d"]
+[gd_scene load_steps=3 format=3 uid="uid://bj1fq176tly7d"]
 
-[ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="1_82sop"]
 [ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="1_aeweq"]
-[ext_resource type="PackedScene" uid="uid://r0qh1ukuc7kk" path="res://Scenes/piece.tscn" id="3_8turk"]
+[ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_8turk"]
 
 [node name="StartScene" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1933.0
-offset_bottom = 1067.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8turk")
 script = ExtResource("1_aeweq")
 
 [node name="Button" type="Button" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 616.0
-offset_top = 655.0
-offset_right = 1318.0
-offset_bottom = 819.0
-theme_override_fonts/font = ExtResource("1_82sop")
-theme_override_font_sizes/font_size = 110
-text = "INICIAR"
-
-[node name="Piece" parent="Control/Button" instance=ExtResource("3_8turk")]
+offset_left = -230.0
+offset_top = -205.0
+offset_right = 26.0
+offset_bottom = -136.0
+theme = ExtResource("2_8turk")
+text = "Jugar"
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
