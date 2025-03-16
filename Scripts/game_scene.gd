@@ -7,6 +7,7 @@ var PositionArray
 var p :Node2D
 var tabletop : Node2D 
 
+
 func _ready() -> void:
 	tabletop = $Tabletop
 	SignalManager.StartScene(self)
@@ -52,7 +53,6 @@ func NewChild(a: gen, b: gen, pos: Vector2) -> void:
 	p.position = pos
 	p.leftGen = a
 	p.rightGen = b
-	p.agePiece = 0
 	add_child(p)
 	SignalManager.buffer[0] = p
-	#SignalManager.AddAge.emit()
+	SignalManager.turn += 1
