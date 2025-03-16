@@ -17,6 +17,8 @@ position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_mu0s7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.79, 0.79, 0.79, 0.0862745)
 position = Vector2(64, 64)
 texture = ExtResource("2_64tuj")
 
