@@ -29,6 +29,7 @@ var turn: int = 0
 
 
 func _input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("Click"):
 		sfx_player.stream = preload("res://Audio/click.mp3")
 		sfx_player.play()

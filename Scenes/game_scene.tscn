@@ -37,7 +37,7 @@ position = Vector2(169, 224)
 position = Vector2(168.79, 272)
 
 [node name="GenTree" parent="." instance=ExtResource("6_rgj8m")]
-position = Vector2(-171, -107)
+position = Vector2(-85, -189)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -21
