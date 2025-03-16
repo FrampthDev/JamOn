@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blppwvexn5uqs"
-path="res://.godot/imported/9_CERDO_angry_birds_FICHA_-_copia.png-34f42f261143332c11f3c8f16ae2d435.ctex"
+uid="uid://wxbdmc5yu0gx"
+path="res://.godot/imported/el Mono.png-f63e3d69958ef8dbbf15d0e82acf0af1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/9_CERDO_angry_birds_FICHA_-_copia.png"
-dest_files=["res://.godot/imported/9_CERDO_angry_birds_FICHA_-_copia.png-34f42f261143332c11f3c8f16ae2d435.ctex"]
+source_file="res://Sprites/Animals/el Mono.png"
+dest_files=["res://.godot/imported/el Mono.png-f63e3d69958ef8dbbf15d0e82acf0af1.ctex"]
 
 [params]
 

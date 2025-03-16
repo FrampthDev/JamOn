@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r2f8qimn6ime"
-path="res://.godot/imported/8_PATOCIGU_FICHA.png-dedd1bfaa9b0fa28083778eb2d74db29.ctex"
+uid="uid://bie4s2farg8xh"
+path="res://.godot/imported/la Rana.png-82ad91d8358404dcabea6d0e3c374561.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/8_PATOCIGU_FICHA.png"
-dest_files=["res://.godot/imported/8_PATOCIGU_FICHA.png-dedd1bfaa9b0fa28083778eb2d74db29.ctex"]
+source_file="res://Sprites/Animals/la Rana.png"
+dest_files=["res://.godot/imported/la Rana.png-82ad91d8358404dcabea6d0e3c374561.ctex"]
 
 [params]
 

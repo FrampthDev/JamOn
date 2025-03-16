@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bocyyqi8q7bh2"
-path="res://.godot/imported/7_CALAPULPO_FICHA_-_copia.png-96ebfd17b28ee5e374cde31e832f2ac1.ctex"
+uid="uid://bx70qtwscs7f8"
+path="res://.godot/imported/el Caracol.png-e2bfe9d7215579a21155291c77d4e70e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/7_CALAPULPO_FICHA_-_copia.png"
-dest_files=["res://.godot/imported/7_CALAPULPO_FICHA_-_copia.png-96ebfd17b28ee5e374cde31e832f2ac1.ctex"]
+source_file="res://Sprites/Animals/el Caracol.png"
+dest_files=["res://.godot/imported/el Caracol.png-e2bfe9d7215579a21155291c77d4e70e.ctex"]
 
 [params]
 

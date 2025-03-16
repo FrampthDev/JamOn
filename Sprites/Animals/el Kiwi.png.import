@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk20w6dj54sts"
-path="res://.godot/imported/2_FACUNDO_FICHA.png-d7e4cc252fbcd7b6b0ef2614b59562c2.ctex"
+uid="uid://ctigxc4qserbe"
+path="res://.godot/imported/el Kiwi.png-f64528edec31fde8c6a9d1da171b2eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/2_FACUNDO_FICHA.png"
-dest_files=["res://.godot/imported/2_FACUNDO_FICHA.png-d7e4cc252fbcd7b6b0ef2614b59562c2.ctex"]
+source_file="res://Sprites/Animals/el Kiwi.png"
+dest_files=["res://.godot/imported/el Kiwi.png-f64528edec31fde8c6a9d1da171b2eb8.ctex"]
 
 [params]
 

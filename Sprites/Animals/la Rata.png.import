@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckgkwjf3rwtsk"
-path="res://.godot/imported/3_FICHA_SARDINA.png-9392b4b9242b15c0a4939487b391ec87.ctex"
+uid="uid://btccwrpk26a1k"
+path="res://.godot/imported/la Rata.png-8e113344059cc2fd96810c249fc0f4fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/3_FICHA_SARDINA.png"
-dest_files=["res://.godot/imported/3_FICHA_SARDINA.png-9392b4b9242b15c0a4939487b391ec87.ctex"]
+source_file="res://Sprites/Animals/la Rata.png"
+dest_files=["res://.godot/imported/la Rata.png-8e113344059cc2fd96810c249fc0f4fb.ctex"]
 
 [params]
 

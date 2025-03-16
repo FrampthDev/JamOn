@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drspej36u7bq4"
-path="res://.godot/imported/4_FICHA_RATA.png-50bdbfbdf73450c726e6ece5322241f2.ctex"
+uid="uid://c35ju8s8eq3ra"
+path="res://.godot/imported/el Calamar.png-e0360d7396c20e2b3066bcd8102e9050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Animals/4_FICHA_RATA.png"
-dest_files=["res://.godot/imported/4_FICHA_RATA.png-50bdbfbdf73450c726e6ece5322241f2.ctex"]
+source_file="res://Sprites/Animals/el Calamar.png"
+dest_files=["res://.godot/imported/el Calamar.png-e0360d7396c20e2b3066bcd8102e9050.ctex"]
 
 [params]
 
