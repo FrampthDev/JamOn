@@ -46,6 +46,8 @@ func _ready() -> void:
 	
 	assign_name_and_img()
 	
+	$AreaPickUp/Label.visible = false
+	
 	for i in 8:
 		squareBuffer.append(null)
 	#leftGen = (gen)
