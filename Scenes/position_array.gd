@@ -2,6 +2,7 @@ extends Node2D
 
 var Positions :Array[Vector2]
 var vec : Vector2
+var cont : int
 @export var positionsSize : int = 10
 @export var padding : int = 4
 
