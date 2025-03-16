@@ -23,9 +23,10 @@ func NewPiece(a:gen,b:gen):
 	add_child(p)
 
 func NewChild(a: gen, b: gen, pos: Vector2) -> void:
+	print("nuevo hijo")
 	PositionCont += 1
 	p = piecePrefab.instantiate()
-	p.position = PositionArray[PositionCont % PositionArray.size()]
+	p.position = pos
 	p.leftGen = a
 	p.rightGen = b
 	add_child(p)

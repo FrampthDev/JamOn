@@ -117,7 +117,7 @@ func StartScene(_gameScene: Node2D) -> void:
 
 func Match(i: int, j: int) -> void:
 	print("match")
-	if i < 8 && squareArray[i][j] == null && squareArray[i][j + 1] == null:
+	if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
 		gameScene.InstantiateChild(i, j, squareArray)
 
 #__________________________________________________________________________________________________
