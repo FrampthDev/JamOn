@@ -70,10 +70,16 @@ func EmptySquare(i, j) -> void:
 		print("No ocupada")
 
 func IsLeft(i: int, j: int) -> bool:
-	return (squareArray[i][j - 1].piece != null)
+	if j == 0 || j == 14:
+		return false
+	else:
+		return (squareArray[i][j - 1].piece != null)
 
 func IsRight(i: int, j: int) -> bool:
-	return(squareArray[i][j + 2].piece != null)
+	if j == 12 || j == 26:
+		return false
+	else:
+		return(squareArray[i][j + 2].piece != null)
 
 func InitializeCursor(_cursor: Node2D) -> void:
 	cursor = _cursor
