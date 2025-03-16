@@ -3,6 +3,7 @@ class_name	gen extends Node2D
 var conexions : Array[gen]
 var id : String
 var coordinates: Vector2i
+var cont : int = 0  
 func Constructor(_id : String,_conexions: Array[gen],_coordinates:Vector2i) -> void:
 	id = _id
 	coordinates = _coordinates

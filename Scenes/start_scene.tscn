@@ -17,14 +17,26 @@ grow_vertical = 2
 theme = ExtResource("2_8turk")
 script = ExtResource("1_aeweq")
 
-[node name="Button" type="Button" parent="Control"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -942.0
+offset_top = -373.0
+offset_right = -499.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/AspectRatioContainer"]
 texture_filter = 1
-layout_mode = 0
-offset_left = -230.0
-offset_top = -205.0
-offset_right = 26.0
-offset_bottom = -136.0
+layout_mode = 2
 theme = ExtResource("2_8turk")
 text = "Jugar"
+text_overrun_behavior = 1
+autowrap_mode = 2
 
-[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/AspectRatioContainer/Button" to="Control" method="_on_button_pressed"]
