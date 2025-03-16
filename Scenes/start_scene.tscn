@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="1_aeweq"]
 [ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_8turk"]
 
-[node name="StartScene" type="Node2D"]
+[node name="StartScene2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -34,22 +34,22 @@ script = ExtResource("1_aeweq")
 texture_filter = 1
 layout_mode = 2
 offset_left = -137.0
-offset_top = 145.0
+offset_top = 154.0
 offset_right = 201.0
-offset_bottom = 246.0
+offset_bottom = 255.0
 theme = ExtResource("2_8turk")
 text = "Jugar"
 text_overrun_behavior = 1
 autowrap_mode = 2
 
 [node name="TextEdit" type="Label" parent="."]
-offset_left = -249.0
-offset_top = -259.0
-offset_right = 401.0
-offset_bottom = 33.0
+offset_left = -253.0
+offset_top = -250.0
+offset_right = 397.0
+offset_bottom = 42.0
 theme = ExtResource("2_8turk")
 theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
-theme_override_font_sizes/font_size = 112
+theme_override_font_sizes/font_size = 90
 text = "Animal Dominion"
 horizontal_alignment = 1
 autowrap_mode = 2
