@@ -64,10 +64,10 @@ func OccupySquare(i: int, j: int, square: Node2D) -> void:
 	squareArray[i][j + 1].piece = square
 	
 	if IsLeft(i, j):
-		Match(i + 2, j - 1)
+		Match(i + 2, j - 1, squareArray[i][j].piece.leftGen, squareArray[i][j - 1].piece.rightGen)
 		print("está a la izquierda")
 	if IsRight(i, j):
-		Match(i + 2, j + 1)
+		Match(i + 2, j + 1, squareArray[i][j].piece.rightGen, squareArray[i][j + 2].piece.leftGen)
 		print("está a la derecha")
 
 func EmptySquare(i, j) -> void:
@@ -121,10 +121,10 @@ func Start(array: Array) -> void:
 func StartScene(_gameScene: Node2D) -> void:
 	gameScene = _gameScene
 
-func Match(i: int, j: int) -> void:
-	print("match")
-	if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
-		gameScene.InstantiateChild(i, j, squareArray)
+func Match(i: int, j: int, genA: gen, genB: gen) -> void:
+	if gameScene.IsCompatible(genA, genB): # FALTA QUE EXISTA EL MÉTODO ISCOMPATIBLE()
+		if i < 8 && squareArray[i][j].piece == null && squareArray[i][j + 1].piece == null:
+			gameScene.InstantiateChild(i, j, squareArray)
 
 
 #__________________________________________________________________________________________________
