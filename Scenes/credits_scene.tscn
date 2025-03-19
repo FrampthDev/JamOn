@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpdlclivfhm3e"]
+[gd_scene load_steps=5 format=3 uid="uid://bpdlclivfhm3e"]
 
 [ext_resource type="Texture2D" uid="uid://1t88td7ei38b" path="res://Sprites/portada.png" id="1_5a4fm"]
 [ext_resource type="Theme" uid="uid://cra1mnjpw8yfs" path="res://pixel_gothic.theme" id="2_iin1p"]
 [ext_resource type="Script" uid="uid://bumbgr6u00ui6" path="res://Scripts/scene_control.gd" id="3_v22qd"]
+[ext_resource type="FontFile" uid="uid://bjlb2eitrxrrv" path="res://EXEPixelPerfect.ttf" id="4_iin1p"]
 
 [node name="StartScene" type="Node2D"]
 
@@ -33,10 +34,10 @@ script = ExtResource("3_v22qd")
 [node name="Button" type="Button" parent="Control"]
 texture_filter = 1
 layout_mode = 2
-offset_left = -176.0
-offset_top = 338.0
-offset_right = 382.0
-offset_bottom = 433.0
+offset_left = -293.0
+offset_top = 223.0
+offset_right = 265.0
+offset_bottom = 318.0
 theme = ExtResource("2_iin1p")
 theme_override_font_sizes/font_size = 43
 text = "Jugar otra partida"
@@ -44,10 +45,10 @@ text_overrun_behavior = 1
 autowrap_mode = 2
 
 [node name="TextEdit" type="Label" parent="."]
-offset_left = -269.0
-offset_top = -456.0
-offset_right = 381.0
-offset_bottom = -164.0
+offset_left = -319.0
+offset_top = -348.0
+offset_right = 331.0
+offset_bottom = -56.0
 theme = ExtResource("2_iin1p")
 theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
 theme_override_font_sizes/font_size = 55
@@ -56,13 +57,14 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="TextEdit2" type="Label" parent="."]
-offset_left = -332.0
-offset_top = -299.0
-offset_right = 318.0
-offset_bottom = 317.0
+offset_left = -330.0
+offset_top = -246.0
+offset_right = 320.0
+offset_bottom = 370.0
 theme = ExtResource("2_iin1p")
 theme_override_colors/font_color = Color(0.847059, 0.654902, 0.0901961, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("4_iin1p")
+theme_override_font_sizes/font_size = 40
 text = "Diseñadora: 
 Paula Soto
 

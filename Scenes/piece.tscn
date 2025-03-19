@@ -23,7 +23,7 @@ font = ExtResource("2_l2hco")
 font_size = 11
 font_color = Color(1, 0.893982, 0.699143, 1)
 outline_size = 4
-outline_color = Color(0.282353, 0.109804, 0, 0.411765)
+outline_color = Color(0.28, 0.107333, 0, 0.819608)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y70yu"]
 radius = 3.5

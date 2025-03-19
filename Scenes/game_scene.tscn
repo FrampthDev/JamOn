@@ -32,9 +32,11 @@ position = Vector2(-480, -100)
 
 [node name="Piece" parent="." instance=ExtResource("2_b6fju")]
 position = Vector2(169, 224)
+crowns = 1
 
 [node name="Piece2" parent="." instance=ExtResource("2_b6fju")]
 position = Vector2(168.79, 272)
+crowns = 2
 
 [node name="GenTree" parent="." instance=ExtResource("6_rgj8m")]
 position = Vector2(-85, -189)
